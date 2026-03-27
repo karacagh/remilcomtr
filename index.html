@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- SEO Meta Tags -->
+  <title>Remil — Yapay Zeka Destekli Fal Uygulaması | Kahve Falı, El Falı, Tarot</title>
+  <meta name="description" content="Remil ile yapay zeka destekli kahve falı, el falı, yüz falı, ilişki falı ve tarot kehaneti. 6 benzersiz falcı karakteriyle kişisel yorumlar. Şimdi ücretsiz dene!" />
+  <meta name="keywords" content="kahve falı, el falı, yüz falı, ilişki falı, tarot, numeroloji, yapay zeka fal, online fal, fal uygulaması, remil fal, ücretsiz fal, AI fal" />
+  <meta name="robots" content="index, follow" />
+  <meta name="author" content="Remil" />
+  <link rel="canonical" href="https://remil.com.tr/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://remil.com.tr/" />
+  <meta property="og:title" content="Remil — Kaderine Bak, Geleceğini Gör" />
+  <meta property="og:description" content="Yapay zeka destekli kahve falı, el falı, tarot ve daha fazlası. 6 falcı karakteriyle kişisel yorumlar." />
+  <meta property="og:image" content="https://remil.com.tr/og-image.jpg" />
+  <meta property="og:locale" content="tr_TR" />
+  <meta property="og:site_name" content="Remil" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Remil — Kaderine Bak, Geleceğini Gör" />
+  <meta name="twitter:description" content="Yapay zeka destekli kahve falı, el falı, tarot ve daha fazlası." />
+  <meta name="twitter:image" content="https://remil.com.tr/og-image.jpg" />
+
+  <!-- Schema.org Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "WebApplication",
+    "name": "Remil",
+    "url": "https://remil.app",
+    "description": "Yapay zeka destekli fal uygulaması. Kahve falı, el falı, yüz falı, ilişki falı, numeroloji ve tarot.",
+    "applicationCategory": "Entertainment",
+    "operatingSystem": "Web, iOS, Android",
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "TRY",
+      "description": "200 token kayıt bonusu ile ücretsiz başla"
+    },
+    "publisher": {
+      "@type": "Organization",
+      "name": "Remil",
+      "url": "https://remil.com.tr",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "email": "destek@remil.com.tr",
+        "contactType": "customer support",
+        "availableLanguage": "Turkish"
+      }
+    }
+  }
+  </script>
+
+  <style>
+    :root {
+      --bg: #0a0718;
+      --bg2: #0f0c20;
+      --bg3: #150f2a;
+      --purple: #A855F7;
+      --purple-light: #c084fc;
+      --purple-dim: rgba(168,85,247,0.15);
+      --gold: #F9CB42;
+      --pink: #F472B6;
+      --text: #ffffff;
+      --text-dim: rgba(255,255,255,0.65);
+      --text-faint: rgba(255,255,255,0.35);
+      --border: rgba(168,85,247,0.2);
+      --card: rgba(255,255,255,0.04);
+      --card-hover: rgba(168,85,247,0.08);
+      --glow: 0 0 40px rgba(168,85,247,0.25);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Trebuchet MS', sans-serif;
+      line-height: 1.7;
+      overflow-x: hidden;
+    }
+
+    /* Stars background */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background-image:
+        radial-gradient(1px 1px at 15% 20%, rgba(255,255,255,0.6) 0%, transparent 100%),
+        radial-gradient(1px 1px at 40% 5%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 70% 15%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1.5px 1.5px at 85% 35%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 25% 65%, rgba(255,255,255,0.4) 0%, transparent 100%),
+        radial-gradient(1px 1px at 55% 80%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 90% 70%, rgba(255,255,255,0.5) 0%, transparent 100%),
+        radial-gradient(1px 1px at 10% 90%, rgba(255,255,255,0.3) 0%, transparent 100%),
+        radial-gradient(1px 1px at 60% 45%, rgba(255,255,255,0.2) 0%, transparent 100%),
+        radial-gradient(1px 1px at 30% 40%, rgba(255,255,255,0.4) 0%, transparent 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* ==================== NAV ==================== */
+    nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 100;
+      padding: 0 5vw;
+      height: 68px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(10,7,24,0.85);
+      backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+    }
+    .nav-logo .orb {
+      width: 34px; height: 34px;
+      background: radial-gradient(circle at 35% 35%, var(--purple-light), #6d28d9, #3b1f6e);
+      border-radius: 50%;
+      box-shadow: 0 0 14px rgba(168,85,247,0.5);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px;
+    }
+    .nav-logo span {
+      font-family: Georgia, serif;
+      font-size: 1.35rem;
+      font-weight: bold;
+      color: var(--text);
+      letter-spacing: 0.04em;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+      list-style: none;
+    }
+    .nav-links a {
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    .nav-cta {
+      background: linear-gradient(135deg, var(--purple), #7c3aed);
+      color: #fff !important;
+      padding: 0.45rem 1.2rem;
+      border-radius: 50px;
+      font-weight: 600;
+      transition: transform 0.2s, box-shadow 0.2s !important;
+    }
+    .nav-cta:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 16px rgba(168,85,247,0.4) !important;
+      color: #fff !important;
+    }
+
+    .hamburger { display: none; cursor: pointer; flex-direction: column; gap: 5px; }
+    .hamburger span { display: block; width: 24px; height: 2px; background: var(--text-dim); border-radius: 2px; }
+
+    /* ==================== HERO ==================== */
+    #hero {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 120px 5vw 80px;
+      position: relative;
+    }
+
+    .hero-glow {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(168,85,247,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(168,85,247,0.12);
+      border: 1px solid rgba(168,85,247,0.3);
+      border-radius: 50px;
+      padding: 0.35rem 1rem;
+      font-size: 0.82rem;
+      color: var(--purple-light);
+      margin-bottom: 1.8rem;
+      animation: fadeUp 0.6s ease both;
+    }
+
+    .hero-orb {
+      width: 100px; height: 100px;
+      background: radial-gradient(circle at 35% 30%, #e9d5ff, #a855f7, #5b21b6, #2e1065);
+      border-radius: 50%;
+      box-shadow: 0 0 60px rgba(168,85,247,0.5), 0 0 120px rgba(168,85,247,0.2);
+      margin: 0 auto 2rem;
+      animation: float 6s ease-in-out infinite, fadeUp 0.5s ease both;
+      position: relative;
+    }
+    .hero-orb::after {
+      content: '';
+      position: absolute;
+      inset: -6px;
+      border-radius: 50%;
+      border: 1px solid rgba(168,85,247,0.3);
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-14px); }
+    }
+
+    h1 {
+      font-family: Georgia, serif;
+      font-size: clamp(2.4rem, 5.5vw, 4.2rem);
+      line-height: 1.2;
+      margin-bottom: 1.2rem;
+      animation: fadeUp 0.7s ease 0.1s both;
+    }
+    h1 .highlight {
+      background: linear-gradient(135deg, var(--purple-light), var(--pink), var(--gold));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem;
+      color: var(--text-dim);
+      max-width: 520px;
+      margin: 0 auto 2.5rem;
+      animation: fadeUp 0.7s ease 0.2s both;
+    }
+
+    .hero-btns {
+      display: flex;
+      gap: 1rem;
+      justify-content: center;
+      flex-wrap: wrap;
+      animation: fadeUp 0.7s ease 0.3s both;
+    }
+
+    .btn-primary {
+      background: linear-gradient(135deg, var(--purple), #7c3aed);
+      color: #fff;
+      padding: 0.85rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+      box-shadow: 0 4px 24px rgba(168,85,247,0.35);
+      transition: transform 0.2s, box-shadow 0.2s;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(168,85,247,0.5); }
+
+    .btn-secondary {
+      background: transparent;
+      color: var(--text-dim);
+      padding: 0.85rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 1rem;
+      border: 1px solid var(--border);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .btn-secondary:hover { border-color: var(--purple); color: var(--text); }
+
+    .hero-stats {
+      display: flex;
+      gap: 2.5rem;
+      justify-content: center;
+      margin-top: 3.5rem;
+      animation: fadeUp 0.7s ease 0.4s both;
+    }
+    .stat { text-align: center; }
+    .stat-num {
+      font-family: Georgia, serif;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--purple-light);
+    }
+    .stat-label { font-size: 0.8rem; color: var(--text-faint); }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ==================== SECTIONS ==================== */
+    section { position: relative; z-index: 1; padding: 90px 5vw; }
+    .container { max-width: 1140px; margin: 0 auto; }
+
+    .section-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--purple);
+      margin-bottom: 0.6rem;
+    }
+    h2 {
+      font-family: Georgia, serif;
+      font-size: clamp(1.8rem, 3.5vw, 2.8rem);
+      line-height: 1.25;
+      margin-bottom: 1rem;
+    }
+    .section-desc {
+      color: var(--text-dim);
+      max-width: 540px;
+      margin-bottom: 3rem;
+    }
+
+    /* ==================== HOW IT WORKS ==================== */
+    #nasil-calisir { background: var(--bg2); }
+
+    .steps {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+      counter-reset: steps;
+    }
+    .step {
+      position: relative;
+      padding: 2rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      text-align: center;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .step:hover { border-color: var(--purple); background: var(--card-hover); }
+    .step-num {
+      width: 48px; height: 48px;
+      border-radius: 50%;
+      background: var(--purple-dim);
+      border: 2px solid var(--purple);
+      display: flex; align-items: center; justify-content: center;
+      font-family: Georgia, serif;
+      font-size: 1.2rem;
+      font-weight: bold;
+      color: var(--purple-light);
+      margin: 0 auto 1.2rem;
+    }
+    .step h3 { font-family: Georgia, serif; font-size: 1.15rem; margin-bottom: 0.5rem; }
+    .step p { font-size: 0.9rem; color: var(--text-dim); }
+
+    .step-connector {
+      position: absolute;
+      top: 50%;
+      right: -1rem;
+      transform: translateY(-50%);
+      color: var(--border);
+      font-size: 1.2rem;
+    }
+
+    /* ==================== FAL TÜRLERİ ==================== */
+    #fal-turleri {}
+
+    .fal-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .fal-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.8rem;
+      text-decoration: none;
+      color: var(--text);
+      display: block;
+      transition: transform 0.2s, border-color 0.3s, box-shadow 0.3s;
+    }
+    .fal-card:hover {
+      transform: translateY(-4px);
+      border-color: var(--purple);
+      box-shadow: var(--glow);
+    }
+    .fal-emoji { font-size: 2.4rem; margin-bottom: 1rem; display: block; }
+    .fal-card h3 { font-family: Georgia, serif; font-size: 1.2rem; margin-bottom: 0.5rem; }
+    .fal-card p { font-size: 0.88rem; color: var(--text-dim); line-height: 1.6; }
+    .fal-tag {
+      display: inline-block;
+      margin-top: 0.8rem;
+      padding: 0.2rem 0.7rem;
+      font-size: 0.75rem;
+      border-radius: 50px;
+      background: var(--purple-dim);
+      color: var(--purple-light);
+      border: 1px solid rgba(168,85,247,0.2);
+    }
+    .fal-tag.soon { background: rgba(249,203,66,0.1); color: var(--gold); border-color: rgba(249,203,66,0.25); }
+
+    /* ==================== FALCILAR ==================== */
+    #falcilar { background: var(--bg2); }
+
+    .falcilar-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+      gap: 1.5rem;
+    }
+    .falci-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 1.8rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      transition: border-color 0.3s, background 0.3s;
+    }
+    .falci-card:hover { border-color: var(--purple); background: var(--card-hover); }
+    .falci-avatar {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--purple-dim);
+      border: 2px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.6rem;
+      flex-shrink: 0;
+    }
+    .falci-info h3 { font-family: Georgia, serif; font-size: 1.05rem; margin-bottom: 0.25rem; }
+    .falci-info p { font-size: 0.85rem; color: var(--text-dim); line-height: 1.55; }
+    .falci-token {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: 0.7rem;
+      font-size: 0.8rem;
+      color: var(--gold);
+    }
+
+    /* ==================== YORUMLAR ==================== */
+    #yorumlar {}
+
+    .yorumlar-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+    .yorum-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.5rem;
+    }
+    .yorum-stars { color: var(--gold); font-size: 1rem; margin-bottom: 0.8rem; }
+    .yorum-text { font-size: 0.9rem; color: var(--text-dim); line-height: 1.65; font-style: italic; margin-bottom: 1rem; }
+    .yorum-user { display: flex; align-items: center; gap: 10px; }
+    .yorum-avatar {
+      width: 36px; height: 36px;
+      border-radius: 50%;
+      background: var(--purple-dim);
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+    }
+    .yorum-name { font-size: 0.85rem; font-weight: 600; }
+    .yorum-type { font-size: 0.75rem; color: var(--text-faint); }
+
+    /* ==================== FIYATLAR ==================== */
+    #fiyatlar { background: var(--bg2); }
+
+    .fiyat-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 1.2rem;
+    }
+    .fiyat-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 1.8rem;
+      text-align: center;
+      position: relative;
+      transition: border-color 0.3s;
+    }
+    .fiyat-card:hover { border-color: var(--purple); }
+    .fiyat-card.featured {
+      border-color: var(--purple);
+      background: rgba(168,85,247,0.07);
+    }
+    .fiyat-card.featured::before {
+      content: 'Popüler';
+      position: absolute;
+      top: -12px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--purple);
+      color: #fff;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.2rem 0.8rem;
+      border-radius: 50px;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+    }
+    .fiyat-token { font-size: 0.85rem; color: var(--text-dim); margin-bottom: 0.4rem; }
+    .fiyat-num {
+      font-family: Georgia, serif;
+      font-size: 2rem;
+      font-weight: bold;
+      color: var(--gold);
+    }
+    .fiyat-label { font-size: 0.75rem; color: var(--text-faint); margin-bottom: 1.2rem; }
+    .fiyat-btn {
+      display: block;
+      background: var(--purple-dim);
+      border: 1px solid rgba(168,85,247,0.3);
+      color: var(--purple-light);
+      padding: 0.55rem 1rem;
+      border-radius: 8px;
+      font-size: 0.85rem;
+      text-decoration: none;
+      transition: background 0.2s;
+      cursor: pointer;
+    }
+    .fiyat-btn:hover { background: rgba(168,85,247,0.2); }
+    .fiyat-card.featured .fiyat-btn {
+      background: var(--purple);
+      color: #fff;
+      border-color: var(--purple);
+    }
+    .fiyat-card.featured .fiyat-btn:hover { background: var(--purple-light); }
+
+    /* ==================== UYGULAMA İNDİR ==================== */
+    #uygulama {
+      background: radial-gradient(ellipse at 50% 0%, rgba(168,85,247,0.12) 0%, transparent 60%);
+      border-top: 1px solid var(--border);
+    }
+
+    .uygulama-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+    }
+    .uygulama-steps { list-style: none; }
+    .uygulama-steps li {
+      display: flex;
+      gap: 12px;
+      margin-bottom: 1.2rem;
+      font-size: 0.95rem;
+      color: var(--text-dim);
+    }
+    .uygulama-steps .step-icon {
+      width: 28px; height: 28px;
+      border-radius: 50%;
+      background: var(--purple-dim);
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.85rem;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+    .qr-box {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      text-align: center;
+    }
+    .qr-placeholder {
+      width: 140px; height: 140px;
+      background: rgba(168,85,247,0.08);
+      border: 2px dashed var(--border);
+      border-radius: 12px;
+      margin: 0 auto 1.2rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 6px;
+      color: var(--text-faint);
+      font-size: 0.8rem;
+    }
+    .qr-placeholder svg { opacity: 0.3; }
+    .qr-box p { font-size: 0.88rem; color: var(--text-dim); }
+    .qr-box strong { color: var(--purple-light); }
+    .uygulama-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 1.5rem;
+      background: linear-gradient(135deg, var(--purple), #7c3aed);
+      color: #fff;
+      padding: 0.8rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 20px rgba(168,85,247,0.35);
+    }
+    .uygulama-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 28px rgba(168,85,247,0.5); }
+
+    /* ==================== SSS ==================== */
+    #sss {}
+
+    .sss-list { max-width: 760px; }
+    .sss-item {
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 0.8rem;
+      overflow: hidden;
+    }
+    .sss-q {
+      padding: 1.1rem 1.4rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-weight: 600;
+      font-size: 0.95rem;
+      transition: background 0.2s;
+    }
+    .sss-q:hover { background: var(--card-hover); }
+    .sss-q span { color: var(--purple); font-size: 1.2rem; transition: transform 0.3s; }
+    .sss-a {
+      display: none;
+      padding: 0 1.4rem 1.2rem;
+      color: var(--text-dim);
+      font-size: 0.9rem;
+      line-height: 1.7;
+    }
+    .sss-item.open .sss-a { display: block; }
+    .sss-item.open .sss-q { background: var(--card-hover); }
+    .sss-item.open .sss-q span { transform: rotate(45deg); }
+
+    /* ==================== İLETİŞİM ==================== */
+    #iletisim { background: var(--bg2); }
+
+    .iletisim-inner {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: start;
+    }
+    .iletisim-info p { color: var(--text-dim); margin-bottom: 1.5rem; font-size: 0.95rem; }
+    .iletisim-link {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 1rem;
+      color: var(--text-dim);
+      text-decoration: none;
+      font-size: 0.9rem;
+      transition: color 0.2s;
+    }
+    .iletisim-link:hover { color: var(--purple-light); }
+    .iletisim-link .icon {
+      width: 38px; height: 38px;
+      border-radius: 10px;
+      background: var(--purple-dim);
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1rem;
+    }
+    form { display: flex; flex-direction: column; gap: 1rem; }
+    form input, form textarea, form select {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.8rem 1rem;
+      color: var(--text);
+      font-family: 'Trebuchet MS', sans-serif;
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    form input:focus, form textarea:focus, form select:focus { border-color: var(--purple); }
+    form textarea { min-height: 120px; resize: vertical; }
+    form input::placeholder, form textarea::placeholder { color: var(--text-faint); }
+    form select option { background: #1a1030; }
+    .form-submit {
+      background: linear-gradient(135deg, var(--purple), #7c3aed);
+      color: #fff;
+      border: none;
+      padding: 0.85rem;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: opacity 0.2s;
+    }
+    .form-submit:hover { opacity: 0.9; }
+
+    /* ==================== FOOTER ==================== */
+    footer {
+      background: #060412;
+      border-top: 1px solid var(--border);
+      padding: 4rem 5vw 2rem;
+    }
+    .footer-inner {
+      max-width: 1140px;
+      margin: 0 auto;
+    }
+    .footer-top {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 2.5rem;
+      margin-bottom: 3rem;
+    }
+    .footer-brand p { color: var(--text-dim); font-size: 0.88rem; margin-top: 0.8rem; max-width: 280px; line-height: 1.65; }
+    .footer-brand .slogan {
+      font-family: Georgia, serif;
+      font-style: italic;
+      color: var(--purple-light);
+      margin-top: 1rem;
+      font-size: 0.9rem;
+    }
+    .footer-col h4 { font-size: 0.85rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--text-dim); margin-bottom: 1rem; }
+    .footer-col ul { list-style: none; }
+    .footer-col li { margin-bottom: 0.55rem; }
+    .footer-col a { color: var(--text-faint); text-decoration: none; font-size: 0.88rem; transition: color 0.2s; }
+    .footer-col a:hover { color: var(--purple-light); }
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+    .footer-bottom p { font-size: 0.8rem; color: var(--text-faint); }
+    .footer-legal a { color: var(--text-faint); text-decoration: none; font-size: 0.8rem; margin-left: 1.2rem; transition: color 0.2s; }
+    .footer-legal a:hover { color: var(--text-dim); }
+
+    /* ==================== RESPONSIVE ==================== */
+    @media (max-width: 900px) {
+      .steps { grid-template-columns: 1fr; }
+      .uygulama-inner { grid-template-columns: 1fr; }
+      .iletisim-inner { grid-template-columns: 1fr; }
+      .footer-top { grid-template-columns: 1fr 1fr; }
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+    }
+    @media (max-width: 600px) {
+      .footer-top { grid-template-columns: 1fr; }
+      .hero-stats { gap: 1.5rem; flex-wrap: wrap; }
+      .footer-bottom { flex-direction: column; text-align: center; }
+      .footer-legal { display: flex; flex-direction: column; gap: 0.5rem; align-items: center; }
+      .footer-legal a { margin-left: 0; }
+    }
+
+    /* Mobile menu */
+    .mobile-menu {
+      display: none;
+      position: fixed;
+      inset: 0;
+      background: rgba(10,7,24,0.97);
+      z-index: 99;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu a { font-size: 1.3rem; color: var(--text-dim); text-decoration: none; }
+    .mobile-menu a:hover { color: var(--text); }
+    .mobile-close {
+      position: absolute;
+      top: 20px; right: 5vw;
+      background: none; border: none;
+      color: var(--text-dim); font-size: 1.8rem; cursor: pointer;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border), transparent);
+      margin: 0;
+    }
+
+    /* scroll reveal */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity 0.55s, transform 0.55s; }
+    .reveal.visible { opacity: 1; transform: none; }
+  </style>
+</head>
+<body>
+
+<!-- ==================== MOBILE MENU ==================== -->
+<div class="mobile-menu" id="mobileMenu">
+  <button class="mobile-close" onclick="closeMobile()">✕</button>
+  <a href="#nasil-calisir" onclick="closeMobile()">Nasıl Çalışır?</a>
+  <a href="#fal-turleri" onclick="closeMobile()">Fal Türleri</a>
+  <a href="#falcilar" onclick="closeMobile()">Falcılarımız</a>
+  <a href="#fiyatlar" onclick="closeMobile()">Fiyatlar</a>
+  <a href="#iletisim" onclick="closeMobile()">İletişim</a>
+  <a href="https://remil.app" class="btn-primary" onclick="closeMobile()">✨ Uygulamayı Aç</a>
+</div>
+
+<!-- ==================== NAV ==================== -->
+<nav>
+  <a href="/" class="nav-logo" aria-label="Remil Ana Sayfa">
+    <div class="orb">🔮</div>
+    <span>Remil</span>
+  </a>
+  <ul class="nav-links" role="navigation" aria-label="Ana Menü">
+    <li><a href="#nasil-calisir">Nasıl Çalışır?</a></li>
+    <li><a href="#fal-turleri">Fal Türleri</a></li>
+    <li><a href="#falcilar">Falcılarımız</a></li>
+    <li><a href="#fiyatlar">Fiyatlar</a></li>
+    <li><a href="#sss">SSS</a></li>
+    <li><a href="#iletisim">İletişim</a></li>
+    <li><a href="https://remil.app" class="nav-cta" target="_blank" rel="noopener">✨ Uygulamayı Aç</a></li>
+  </ul>
+  <div class="hamburger" onclick="openMobile()" aria-label="Menüyü Aç" role="button" tabindex="0">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- ==================== HERO ==================== -->
+<section id="hero" aria-label="Ana Tanıtım">
+  <div class="hero-glow"></div>
+  <div class="hero-badge">🔮 Yapay Zeka Destekli Fal Uygulaması</div>
+  <div class="hero-orb" role="img" aria-label="Remil kristal küre logosu"></div>
+  <h1>Kaderine Bak,<br /><span class="highlight">Geleceğini Gör</span></h1>
+  <p class="hero-sub">Türkiye'nin ilk yapay zeka destekli fal uygulaması. Kahve falından tarot'a, 6 benzersiz falcı karakteriyle kişisel yorumlar alın.</p>
+  <div class="hero-btns">
+    <a href="https://remil.app" target="_blank" rel="noopener" class="btn-primary">✨ Hemen Dene — Ücretsiz</a>
+    <a href="#nasil-calisir" class="btn-secondary">Nasıl çalışır?</a>
+  </div>
+  <div class="hero-stats">
+    <div class="stat"><div class="stat-num">200</div><div class="stat-label">Ücretsiz Token</div></div>
+    <div class="stat"><div class="stat-num">6</div><div class="stat-label">Falcı Karakteri</div></div>
+    <div class="stat"><div class="stat-num">5</div><div class="stat-label">Fal Türü</div></div>
+    <div class="stat"><div class="stat-num">AI</div><div class="stat-label">Destekli Yorumlar</div></div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================== NASIL ÇALIŞIR? ==================== -->
+<section id="nasil-calisir">
+  <div class="container">
+    <div class="section-label">Kullanım</div>
+    <h2>3 Adımda Falına Bak</h2>
+    <p class="section-desc">Kayıt olmandan sadece dakikalar içinde kişisel yorumuna ulaş.</p>
+    <div class="steps">
+      <div class="step reveal">
+        <div class="step-num">1</div>
+        <h3>Falcını Seç</h3>
+        <p>6 benzersiz karakter arasından sana en yakın hissettiren falcıyı seç. Her biri farklı bir enerji taşıyor.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">2</div>
+        <h3>Fotoğrafını Yükle</h3>
+        <p>Kahve fincanını, avuç içini ya da istenen görseli yükle. Sisteme doğum tarihi ve bilgilerini gir.</p>
+      </div>
+      <div class="step reveal">
+        <div class="step-num">3</div>
+        <h3>Yorumunu Oku</h3>
+        <p>Yapay zeka, seçtiğin falcı karakterin diliyle sana özel kişisel yorumunu hazırlar.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================== FAL TÜRLERİ ==================== -->
+<section id="fal-turleri">
+  <div class="container">
+    <div class="section-label">Ne Bakılır?</div>
+    <h2>Fal Türleri</h2>
+    <p class="section-desc">Türkiye'nin geleneksel fal kültürünü yapay zeka ile modern bir deneyime dönüştürüyoruz.</p>
+    <div class="fal-grid">
+      <a href="https://remil.app" target="_blank" rel="noopener" class="fal-card reveal">
+        <span class="fal-emoji">☕</span>
+        <h3>Kahve Falı</h3>
+        <p>1 ile 4 fincan fotoğrafı yükle, yapay zeka fincanındaki şekil ve sembolleri yorumlasın. Geçmiş, bugün ve gelecek için detaylı anlayış.</p>
+        <span class="fal-tag">Mevcut</span>
+      </a>
+      <a href="https://remil.app" target="_blank" rel="noopener" class="fal-card reveal">
+        <span class="fal-emoji">✋</span>
+        <h3>El Falı</h3>
+        <p>Avuç içi fotoğrafını ve doğum bilgilerini paylaş. Kırışıklıkların anlattığı kaderine kulak ver.</p>
+        <span class="fal-tag">Mevcut</span>
+      </a>
+      <a href="https://remil.app" target="_blank" rel="noopener" class="fal-card reveal">
+        <span class="fal-emoji">👤</span>
+        <h3>Yüz Falı</h3>
+        <p>Yüz fotoğrafın, doğum tarihin ve astroloji bilgilerin bir arada yorumlanır. Yüzündeki her çizginin bir hikayesi var.</p>
+        <span class="fal-tag">Mevcut</span>
+      </a>
+      <a href="https://remil.app" target="_blank" rel="noopener" class="fal-card reveal">
+        <span class="fal-emoji">💑</span>
+        <h3>İlişki Falı</h3>
+        <p>İki kişinin fotoğrafıyla uyum analizi yap. Sevgilini, eşini ya da partnerini bu falda keşfet.</p>
+        <span class="fal-tag">Mevcut</span>
+      </a>
+      <a href="https://remil.app" target="_blank" rel="noopener" class="fal-card reveal">
+        <span class="fal-emoji">🔢</span>
+        <h3>Numeroloji</h3>
+        <p>Doğum tarihinle hayat yolu sayını hesapla. Sayıların kaderin üzerindeki gizemli etkisini keşfet.</p>
+        <span class="fal-tag">Mevcut</span>
+      </a>
+      <div class="fal-card reveal" style="cursor:default; opacity:0.7;">
+        <span class="fal-emoji">🃏</span>
+        <h3>Tarot</h3>
+        <p>Klasik tarot kartlarının mistik dünyasına adım at. Semboller ve arketipler aracılığıyla içgüdülerini keşfet.</p>
+        <span class="fal-tag soon">Yakında</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================== FALCILAR ==================== -->
+<section id="falcilar">
+  <div class="container">
+    <div class="section-label">Karakterler</div>
+    <h2>Falcılarımız</h2>
+    <p class="section-desc">Her biri farklı bir enerji ve üslupla seni karşılayan 6 özgün falcı karakteri.</p>
+    <div class="falcilar-grid">
+      <div class="falci-card reveal">
+        <div class="falci-avatar">👵</div>
+        <div class="falci-info">
+          <h3>Mediha Hala</h3>
+          <p>Mahalle büyüğü gibi seni azarlar, sever, doğruyu söyler. Sıcak ama net. Koşulsuz gerçeği duyacaksın.</p>
+          <div class="falci-token">🪙 20 Token</div>
+        </div>
+      </div>
+      <div class="falci-card reveal">
+        <div class="falci-avatar">🌙</div>
+        <div class="falci-info">
+          <h3>Acem Kızı Leyla</h3>
+          <p>Gizemli, şiirsel ve mistik. Her cümlesinde bir sır saklı. Seni sırların dünyasına çeker.</p>
+          <div class="falci-token">🪙 25 Token</div>
+        </div>
+      </div>
+      <div class="falci-card reveal">
+        <div class="falci-avatar">🧔</div>
+        <div class="falci-info">
+          <h3>Dede Ahmet</h3>
+          <p>Az konuşur, öz söyler. Her kelimesi ağır, her yorumu derin. Gerçekçi ve sert ama bilge.</p>
+          <div class="falci-token">🪙 30 Token</div>
+        </div>
+      </div>
+      <div class="falci-card reveal">
+        <div class="falci-avatar">✨</div>
+        <div class="falci-info">
+          <h3>Aren Hatun</h3>
+          <p>Güldürürken düşündürür. Eğlenceli yorumların ardında derin içgörüler saklıdır.</p>
+          <div class="falci-token">🪙 35 Token</div>
+        </div>
+      </div>
+      <div class="falci-card reveal">
+        <div class="falci-avatar">👩</div>
+        <div class="falci-info">
+          <h3>Sinem Bacı</h3>
+          <p>Dedikodu ustası, kadın meselelerinde parmak ısırtır. Aşk, ilişki ve kalp kırıklıkları onun alanı.</p>
+          <div class="falci-token">🪙 40 Token</div>
+        </div>
+      </div>
+      <div class="falci-card reveal" style="border-color: rgba(249,203,66,0.3);">
+        <div class="falci-avatar" style="border-color:rgba(249,203,66,0.4);">🧳</div>
+        <div class="falci-info">
+          <h3>Mecnun Giassar</h3>
+          <p>Dünya gezgini, entelektüel, premium deneyim. Derin sorularının peşinde küresel bir bakış açısı sunar.</p>
+          <div class="falci-token" style="color: var(--gold);">🪙 50 Token · Premium</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================== KULLANICI YORUMLARI ==================== -->
+<section id="yorumlar">
+  <div class="container">
+    <div class="section-label">Kullanıcılar Ne Diyor?</div>
+    <h2>Gerçek Yorumlar</h2>
+    <p class="section-desc">Remil'i kullananların deneyimlerinden.</p>
+    <div class="yorumlar-grid">
+      <div class="yorum-card reveal">
+        <div class="yorum-stars">★★★★★</div>
+        <p class="yorum-text">"Kahve falı bölümü inanılmaz! Mediha Hala tam anlamıyla mahalle büyüğü gibi konuştu, hem güldüm hem düşündüm. Kesinlikle tavsiye ederim."</p>
+        <div class="yorum-user">
+          <div class="yorum-avatar">👩</div>
+          <div>
+            <div class="yorum-name">Zeynep A.</div>
+            <div class="yorum-type">Kahve Falı</div>
+          </div>
+        </div>
+      </div>
+      <div class="yorum-card reveal">
+        <div class="yorum-stars">★★★★★</div>
+        <p class="yorum-text">"El falı yorumu gerçekten çok etkileyiciydi. Fotoğrafı yükledim, doğum tarihimi girdim, dakikalar içinde detaylı bir yorum geldi. Teknoloji ve mistisizm buluşmuş."</p>
+        <div class="yorum-user">
+          <div class="yorum-avatar">👨</div>
+          <div>
+            <div class="yorum-name">Murat K.</div>
+            <div class="yorum-type">El Falı</div>
+          </div>
+        </div>
+      </div>
+      <div class="yorum-card reveal">
+        <div class="yorum-stars">★★★★★</div>
+        <p class="yorum-text">"Acem Kızı Leyla'dan aldığım yorum şiir gibiydi. Her cümle öyle güzeldi ki ekran görüntüsü aldım. Gerçekten farklı bir deneyim."</p>
+        <div class="yorum-user">
+          <div class="yorum-avatar">👩</div>
+          <div>
+            <div class="yorum-name">Elif S.</div>
+            <div class="yorum-type">Yüz Falı</div>
+          </div>
+        </div>
+      </div>
+      <div class="yorum-card reveal">
+        <div class="yorum-stars">★★★★☆</div>
+        <p class="yorum-text">"İlişki falını sevgilimle birlikte baktık, çok eğlendik. Uyum analizimiz oldukça tutarlıydı. Numeroloji bölümü de beklentimi aştı."</p>
+        <div class="yorum-user">
+          <div class="yorum-avatar">💑</div>
+          <div>
+            <div class="yorum-name">Ayşe & Burak</div>
+            <div class="yorum-type">İlişki Falı</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================== FİYATLANDIRMA ==================== -->
+<section id="fiyatlar">
+  <div class="container">
+    <div class="section-label">Şeffaf Fiyatlar</div>
+    <h2>Token Paketleri</h2>
+    <p class="section-desc">Kayıt olduğunda <strong style="color:var(--gold)">200 token hediye</strong> alırsın. Daha fazlası için uygun paketlerimiz mevcut.</p>
+    <div class="fiyat-grid">
+      <div class="fiyat-card reveal">
+        <div class="fiyat-token">🪙 100 Token</div>
+        <div class="fiyat-num">49₺</div>
+        <div class="fiyat-label">~4-5 fal yorumu</div>
+        <a href="https://remil.app" target="_blank" rel="noopener" class="fiyat-btn">Satın Al</a>
+      </div>
+      <div class="fiyat-card featured reveal">
+        <div class="fiyat-token">🪙 250 Token</div>
+        <div class="fiyat-num">99₺</div>
+        <div class="fiyat-label">~10-12 fal yorumu</div>
+        <a href="https://remil.app" target="_blank" rel="noopener" class="fiyat-btn">Satın Al</a>
+      </div>
+      <div class="fiyat-card reveal">
+        <div class="fiyat-token">🪙 500 Token</div>
+        <div class="fiyat-num">149₺</div>
+        <div class="fiyat-label">~20-25 fal yorumu</div>
+        <a href="https://remil.app" target="_blank" rel="noopener" class="fiyat-btn">Satın Al</a>
+      </div>
+      <div class="fiyat-card reveal" style="border-color:rgba(249,203,66,0.25);">
+        <div class="fiyat-token" style="color:var(--gold)">⭐ 1 Yıllık Üyelik</div>
+        <div class="fiyat-num" style="color:var(--gold)">299₺</div>
+        <div class="fiyat-label">Sınırsız erişim</div>
+        <a href="https://remil.app" target="_blank" rel="noopener" class="fiyat-btn" style="background:rgba(249,203,66,0.1); color:var(--gold); border-color:rgba(249,203,66,0.3);">Üye Ol</a>
+      </div>
+    </div>
+    <p style="margin-top:1.5rem; font-size:0.85rem; color:var(--text-faint);">💡 Reklam izleyerek de ücretsiz token kazanabilirsin. Ödeme alt yapısı yakında aktif.</p>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================== UYGULAMA İNDİR ==================== -->
+<section id="uygulama">
+  <div class="container">
+    <div class="uygulama-inner">
+      <div>
+        <div class="section-label reveal">PWA Uygulaması</div>
+        <h2 class="reveal">Telefona Ekle, Her Zaman Yanında</h2>
+        <p class="section-desc reveal">Remil, bir PWA (Progressive Web App) olarak çalışır. App Store veya Play Store'a gerek yok, doğrudan telefonuna ekleyebilirsin.</p>
+        <ul class="uygulama-steps">
+          <li class="reveal">
+            <div class="step-icon">📱</div>
+            <span><strong>remil.app</strong> adresini tarayıcında aç (Safari veya Chrome)</span>
+          </li>
+          <li class="reveal">
+            <div class="step-icon">📤</div>
+            <span>Tarayıcının <strong>"Paylaş"</strong> veya menü butonuna dokun</span>
+          </li>
+          <li class="reveal">
+            <div class="step-icon">➕</div>
+            <span><strong>"Ana Ekrana Ekle"</strong> seçeneğine bas</span>
+          </li>
+          <li class="reveal">
+            <div class="step-icon">✨</div>
+            <span>Hazır! Artık her an anında erişim sağlayabilirsin</span>
+          </li>
+        </ul>
+        <a href="https://remil.app" target="_blank" rel="noopener" class="uygulama-btn reveal">🔮 Uygulamayı Aç</a>
+      </div>
+      <div class="qr-box reveal">
+        <div class="qr-placeholder">
+          <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+            <rect x="3" y="3" width="7" height="7"/><rect x="14" y="3" width="7" height="7"/>
+            <rect x="3" y="14" width="7" height="7"/><rect x="14" y="14" width="3" height="3"/>
+            <rect x="19" y="14" width="2" height="2"/><rect x="14" y="19" width="2" height="2"/>
+            <rect x="18" y="18" width="3" height="3"/>
+          </svg>
+          <span>QR Kodu</span>
+        </div>
+        <p>Kameranı tut ve <strong>remil.app</strong> adresine ulaş</p>
+        <p style="margin-top:0.6rem; font-size:0.8rem; color:var(--text-faint);">iOS & Android uyumlu</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================== SSS ==================== -->
+<section id="sss">
+  <div class="container">
+    <div class="section-label">Merak Edilenler</div>
+    <h2>Sıkça Sorulan Sorular</h2>
+    <p class="section-desc">Remil hakkında en çok merak edilen sorular.</p>
+    <div class="sss-list">
+
+      <div class="sss-item reveal">
+        <div class="sss-q" onclick="toggleSSS(this)">
+          Remil ücretsiz mi? <span>+</span>
+        </div>
+        <div class="sss-a">Kayıt olduğunda 200 ücretsiz token hediye verilir. Bu tokenlarla birden fazla fal bakabilirsin. Ek token satın almak isteğe bağlıdır. Ayrıca uygulama içi reklamlar izleyerek de ücretsiz token kazanabilirsin.</div>
+      </div>
+
+      <div class="sss-item reveal">
+        <div class="sss-q" onclick="toggleSSS(this)">
+          Yapay zeka falları gerçek mi? <span>+</span>
+        </div>
+        <div class="sss-a">Remil, Claude AI (Anthropic) teknolojisiyle çalışan eğlence amaçlı bir fal uygulamasıdır. Yorumlar gerçek bir falcıyı simüle etmek için geliştirilmiştir; ancak geleceği tahmin etme iddiası taşımaz. Eğlence, içgörü ve kişisel yansıma amaçlıdır.</div>
+      </div>
+
+      <div class="sss-item reveal">
+        <div class="sss-q" onclick="toggleSSS(this)">
+          Fotoğraflarım güvende mi? <span>+</span>
+        </div>
+        <div class="sss-a">Yüklenen fotoğraflar yalnızca fal yorumunu oluşturmak için kullanılır. Remil, kullanıcı gizliliğine büyük önem verir. Kişisel veriler üçüncü taraflarla paylaşılmaz. Detaylar için Gizlilik Politikamızı inceleyebilirsiniz.</div>
+      </div>
+
+      <div class="sss-item reveal">
+        <div class="sss-q" onclick="toggleSSS(this)">
+          Hangi cihazlarda çalışır? <span>+</span>
+        </div>
+        <div class="sss-a">Remil, iOS ve Android dahil tüm modern tarayıcılarda çalışır. Ayrıca PWA olarak telefonuna ana ekrana ekleyerek uygulama gibi kullanabilirsin. App Store veya Google Play'e gerek yok.</div>
+      </div>
+
+      <div class="sss-item reveal">
+        <div class="sss-q" onclick="toggleSSS(this)">
+          Token nasıl kazanılır? <span>+</span>
+        </div>
+        <div class="sss-a">Kayıt bonusu olarak 200 token alırsın. Ek olarak uygulama içinde reklam izleyerek +30 token kazanabilirsin. Token satın alma özelliği de yakında aktif olacak.</div>
+      </div>
+
+      <div class="sss-item reveal">
+        <div class="sss-q" onclick="toggleSSS(this)">
+          Azerbaycan'dan kullanılabilir mi? <span>+</span>
+        </div>
+        <div class="sss-a">Azerbaycan desteği yakında geliyor! Türk kullanıcılarına yönelik başlayan Remil, kısa süre içinde Azerbaycan'daki kullanıcılara da hizmet vermeye başlayacak.</div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider"></div>
+
+<!-- ==================== İLETİŞİM ==================== -->
+<section id="iletisim">
+  <div class="container">
+    <div class="iletisim-inner">
+      <div class="iletisim-info">
+        <div class="section-label reveal">Yardım</div>
+        <h2 class="reveal">Bizimle İletişime Geç</h2>
+        <p class="reveal">Sorularını, önerilerini veya geri bildirimlerini duymaktan memnuniyet duyarız. En kısa sürede yanıt vereceğiz.</p>
+        <a href="mailto:destek@remil.com.tr" class="iletisim-link reveal">
+          <div class="icon">✉️</div>
+          <span>destek@remil.com.tr</span>
+        </a>
+        <a href="https://remil.app" target="_blank" rel="noopener" class="iletisim-link reveal">
+          <div class="icon">🌐</div>
+          <span>remil.app — Web Uygulaması</span>
+        </a>
+        <a href="https://remil.com.tr" class="iletisim-link reveal">
+          <div class="icon">🏢</div>
+          <span>remil.com.tr — Kurumsal Site</span>
+        </a>
+        <div style="margin-top:2rem;" class="reveal">
+          <p style="font-size:0.85rem; color:var(--text-faint);">⚡ Genellikle 24 saat içinde yanıt verilir.</p>
+        </div>
+      </div>
+      <div class="reveal">
+        <form onsubmit="handleForm(event)">
+          <input type="text" name="ad" placeholder="Adınız Soyadınız" required autocomplete="name" />
+          <input type="email" name="eposta" placeholder="E-posta adresiniz" required autocomplete="email" />
+          <select name="konu">
+            <option value="">Konu seçin</option>
+            <option value="teknik">Teknik Destek</option>
+            <option value="token">Token / Ödeme</option>
+            <option value="oneri">Öneri ve Geri Bildirim</option>
+            <option value="diger">Diğer</option>
+          </select>
+          <textarea name="mesaj" placeholder="Mesajınız..." required></textarea>
+          <button type="submit" class="form-submit">Gönder ✨</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="/" class="nav-logo" style="display:inline-flex;">
+          <div class="orb">🔮</div>
+          <span>Remil</span>
+        </a>
+        <p>Türkiye'nin ilk yapay zeka destekli fal uygulaması. Kahve falından tarota, 6 farklı karakterle kişisel yorumlar.</p>
+        <div class="slogan">"Kaderine Bak, Geleceğini Gör"</div>
+      </div>
+      <div class="footer-col">
+        <h4>Uygulama</h4>
+        <ul>
+          <li><a href="https://remil.app" target="_blank" rel="noopener">Remil'i Aç</a></li>
+          <li><a href="#fal-turleri">Fal Türleri</a></li>
+          <li><a href="#falcilar">Falcılarımız</a></li>
+          <li><a href="#fiyatlar">Fiyatlar</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Kurumsal</h4>
+        <ul>
+          <li><a href="/hakkimizda">Hakkımızda</a></li>
+          <li><a href="#iletisim">İletişim</a></li>
+          <li><a href="#sss">Sık Sorulan Sorular</a></li>
+          <li><a href="#nasil-calisir">Nasıl Çalışır?</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Yasal</h4>
+        <ul>
+          <li><a href="https://remil.app/yasal/gizlilik" target="_blank" rel="noopener">Gizlilik Politikası</a></li>
+          <li><a href="https://remil.app/yasal/kullanim" target="_blank" rel="noopener">Kullanım Koşulları</a></li>
+          <li><a href="mailto:destek@remil.com.tr">destek@remil.com.tr</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 Remil. Tüm hakları saklıdır. Eğlence amaçlıdır.</p>
+      <div class="footer-legal">
+        <a href="https://remil.app/yasal/gizlilik" target="_blank" rel="noopener">Gizlilik</a>
+        <a href="https://remil.app/yasal/kullanim" target="_blank" rel="noopener">Kullanım Koşulları</a>
+        <a href="mailto:destek@remil.com.tr">İletişim</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile menu
+  function openMobile() { document.getElementById('mobileMenu').classList.add('open'); }
+  function closeMobile() { document.getElementById('mobileMenu').classList.remove('open'); }
+
+  // SSS accordion
+  function toggleSSS(el) {
+    const item = el.parentElement;
+    const wasOpen = item.classList.contains('open');
+    document.querySelectorAll('.sss-item').forEach(i => i.classList.remove('open'));
+    if (!wasOpen) item.classList.add('open');
+  }
+
+  // Scroll reveal
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+  // Contact form
+  function handleForm(e) {
+    e.preventDefault();
+    const btn = e.target.querySelector('.form-submit');
+    btn.textContent = '✅ Gönderildi!';
+    btn.style.background = 'rgba(34,197,94,0.8)';
+    setTimeout(() => {
+      btn.textContent = 'Gönder ✨';
+      btn.style.background = '';
+      e.target.reset();
+    }, 3000);
+  }
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', e => {
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) {
+        e.preventDefault();
+        target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
