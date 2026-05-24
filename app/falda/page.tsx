@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
-import Link from "next/link";
-import semboller from "@/data/semboller.json";
+import FaldaClient from "./FaldaClient";
 
 export const metadata: Metadata = {
   title: "Kahve Falında Semboller – Tüm Fal Sembolleri ve Anlamları",
@@ -48,38 +47,12 @@ export default function FaldaSembollerPage() {
           Kahve Falı Sembolleri
         </h1>
         <p className="text-lg max-w-2xl mx-auto" style={{ color: "#c4b5e8" }}>
-          Fincanda gördüğün şekillerin anlamını keşfet. {semboller.length} sembol,
+          Fincanda gördüğün şekillerin anlamını keşfet. 100 sembol,
           detaylı yorumlar ve daha fazlası.
         </p>
       </div>
 
-      {/* Grid */}
-      <div className="max-w-6xl mx-auto px-4 pb-20">
-        <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4">
-          {semboller.map((sembol) => (
-            <Link
-              key={sembol.slug}
-              href={`/falda/${sembol.slug}`}
-              className="group rounded-xl p-4 flex flex-col items-center text-center gap-2 transition-all duration-200 hover:scale-105"
-              style={{
-                backgroundColor: "rgba(168,85,247,0.08)",
-                border: "1px solid rgba(168,85,247,0.2)",
-              }}
-            >
-              <span className="text-3xl">{sembol.emoji}</span>
-              <span
-                className="text-sm font-semibold leading-tight group-hover:text-purple-300 transition-colors"
-                style={{ color: "#e9d9ff" }}
-              >
-                {sembol.baslik}
-              </span>
-              <span className="text-xs" style={{ color: "#9f86c8" }}>
-                {sembol.kisa_anlam}
-              </span>
-            </Link>
-          ))}
-        </div>
-      </div>
+      <FaldaClient />
 
       {/* CTA Banner */}
       <div
