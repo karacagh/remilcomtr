@@ -21,13 +21,13 @@ export default function RuyadaSembollerPage() {
         style={{ borderColor: "rgba(168,85,247,0.2)" }}
       >
         <div className="max-w-6xl mx-auto px-4 py-6 flex items-center justify-between">
-          <Link
+          <a
             href="/"
             className="text-xl font-bold"
             style={{ color: "#A855F7" }}
           >
             remil.com.tr
-          </Link>
+          </a>
           <a
             href="https://remil.app"
             target="_blank"
