@@ -169,7 +169,8 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(156,89,232,.12);pad
 @keyframes fl{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
 .rv{opacity:0;transform:translateY(40px);transition:opacity .8s ease,transform .8s ease}
 .rv.vis{opacity:1;transform:translateY(0)}
-@media(max-width:768px){nav{padding:14px 18px}.nv{display:none}.steps,.fg,.ftg,.aif,.tbr,.fw{grid-template-columns:1fr}.steps::before{display:none}h1.hh{font-size:2.3rem}.hb{flex-direction:column;align-items:center}.t200{width:170px;height:170px}.tbn{font-size:2.8rem}}
+.mob-links{display:none}
+@media(max-width:768px){nav{padding:14px 18px}.nv{display:none}.mob-links{display:flex;gap:16px;justify-content:center;padding:8px 18px;background:rgba(6,6,16,.97);border-bottom:1px solid rgba(156,89,232,.12)}.mob-links a{font-family:'Cinzel',serif;font-size:.6rem;letter-spacing:.15em;text-transform:uppercase;color:rgba(240,232,208,.6);text-decoration:none;transition:color .3s}.mob-links a:hover{color:var(--gl)}.steps,.fg,.ftg,.aif,.tbr,.fw{grid-template-columns:1fr}.steps::before{display:none}h1.hh{font-size:2.3rem}.hb{flex-direction:column;align-items:center}.t200{width:170px;height:170px}.tbn{font-size:2.8rem}}
 @media(min-width:769px) and (max-width:1024px){.fg{grid-template-columns:repeat(2,1fr)}.ftg{grid-template-columns:1fr}.aif{grid-template-columns:repeat(2,1fr)}}
 `;
 
@@ -295,10 +296,18 @@ export default function HomeClient() {
           <li><a href="#nasil-calisir">Nasıl Çalışır</a></li>
           <li><a href="#falcilar">Falcılar</a></li>
           <li><a href="#fal-turleri">Fal Türleri</a></li>
+          <li><a href="/falda">Falda Semboller</a></li>
+          <li><a href="/ruyada">Rüyada Semboller</a></li>
           <li><a href="#fiyatlandirma">Fiyatlar</a></li>
           <li><a href="#indir" className="nc">Hemen Başla</a></li>
         </ul>
       </nav>
+
+      {/* MOBİL SÖZLÜK LİNKLERİ */}
+      <div className="mob-links">
+        <a href="/falda">Falda Semboller</a>
+        <a href="/ruyada">Rüyada Semboller</a>
+      </div>
 
       {/* HERO */}
       <header className="hero" id="home" role="banner">
