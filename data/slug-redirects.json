@@ -1,0 +1,46 @@
+[
+  {
+    "from": "/falda/guL-gormek",
+    "to": "/falda/gul-gormek"
+  },
+  {
+    "from": "/falda/atesh-gormek",
+    "to": "/falda/ates-gormek"
+  },
+  {
+    "from": "/falda/guverCin-gormek",
+    "to": "/falda/guvercin-gormek"
+  },
+  {
+    "from": "/falda/yildiz-kayma-gormek",
+    "to": "/falda/kayan-yildiz-gormek"
+  },
+  {
+    "from": "/falda/kovboy-gormek",
+    "to": "/falda/sapka-gormek"
+  },
+  {
+    "from": "/falda/bulbul-yuvasi-gormek",
+    "to": "/falda/yuva-gormek"
+  },
+  {
+    "from": "/falda/leyla-gormek",
+    "to": "/falda/lale-gormek"
+  },
+  {
+    "from": "/falda/kaplica-gormek",
+    "to": "/falda/kaynak-gormek"
+  },
+  {
+    "from": "/falda/mumluk-gormek",
+    "to": "/falda/fener-gormek"
+  },
+  {
+    "from": "/falda/sogut-gormek",
+    "to": "/falda/sogut-agaci-gormek"
+  },
+  {
+    "from": "/falda/bulbul-kafes-gormek",
+    "to": "/falda/kafes-gormek"
+  }
+]
