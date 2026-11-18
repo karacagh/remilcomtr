@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import MiniFooter from "@/components/MiniFooter";
 import FaldaClient from "./FaldaClient";
 
 export const metadata: Metadata = {
@@ -77,6 +78,7 @@ export default function FaldaSembollerPage() {
           </a>
         </div>
       </div>
+      <MiniFooter />
     </main>
   );
 }

@@ -550,6 +550,9 @@ export default function HomeClient() {
             <li><a href="#fal-turleri">Fal Türleri</a></li>
             <li><a href="#indir">İndir</a></li>
             <li><a href="#sss">SSS</a></li>
+            <li><a href="/falda">Falda Semboller</a></li>
+            <li><a href="/ruyada">Rüyada Semboller</a></li>
+            <li><a href="/hakkimizda">Hakkımızda</a></li>
             <li><a href="mailto:destek@remil.com.tr">Destek</a></li>
             <li><a href="/gizlilik">Gizlilik</a></li>
             <li><a href="/kullanim-kosullari">Kullanım Koşulları</a></li>

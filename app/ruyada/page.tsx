@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import MiniFooter from "@/components/MiniFooter";
 import RuyadaClient from "./RuyadaClient";
 
 export const metadata: Metadata = {
@@ -132,6 +133,7 @@ export default function RuyadaSembollerPage() {
           </a>
         </div>
       </div>
+      <MiniFooter />
     </main>
   );
 }

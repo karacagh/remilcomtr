@@ -1,16 +1,24 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import MiniFooter from "@/components/MiniFooter";
+import {
+  JsonLd,
+  SymbolCta,
+  SymbolSections,
+  symbolJsonLd,
+  type OptionalSections,
+} from "@/components/SymbolSections";
 import ruyalar from "@/data/ruyalar.json";
 
-type Ruya = (typeof ruyalar)[number];
+type Ruya = (typeof ruyalar)[number] & OptionalSections;
 
 interface Props {
   params: Promise<{ slug: string }>;
 }
 
 function getRuya(slug: string): Ruya | undefined {
-  return ruyalar.find((r) => r.slug === slug);
+  return (ruyalar as Ruya[]).find((r) => r.slug === slug);
 }
 
 export async function generateStaticParams() {
@@ -55,6 +63,14 @@ export default async function RuyaPage({ params }: Props) {
       className="min-h-screen"
       style={{ backgroundColor: "#0a0718", color: "#f3f0ff" }}
     >
+      <JsonLd
+        data={symbolJsonLd({
+          section: "ruyada",
+          slug: ruya.slug,
+          title: ruya.baslik,
+          description: ruya.meta_description,
+        })}
+      />
       {/* Header */}
       <header
         className="border-b sticky top-0 z-10 backdrop-blur"
@@ -124,34 +140,7 @@ export default async function RuyaPage({ params }: Props) {
           </p>
         </section>
 
-        {/* CTA */}
-        <section
-          className="rounded-2xl p-8 mb-10 text-center"
-          style={{
-            background:
-              "linear-gradient(135deg, rgba(168,85,247,0.15) 0%, rgba(249,203,66,0.08) 100%)",
-            border: "1px solid rgba(168,85,247,0.3)",
-          }}
-        >
-          <p
-            className="text-2xl font-bold mb-2"
-            style={{ color: "#F9CB42" }}
-          >
-            Rüyanın anlamını merak mı ediyorsun?
-          </p>
-          <p className="mb-6 text-sm" style={{ color: "#c4b5e8" }}>
-            Yapay zeka destekli rüya yorumu için Remil'i dene.
-          </p>
-          <a
-            href="https://remil.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-block px-8 py-4 rounded-xl font-bold text-lg transition-all hover:scale-105 hover:opacity-90"
-            style={{ backgroundColor: "#A855F7", color: "#fff" }}
-          >
-            remil.app'te Rüyamı Yorumla ✨
-          </a>
-        </section>
+        <SymbolSections data={ruya} />
 
         {/* İlgili Rüyalar */}
         {ilgiliRuyalar.length > 0 && (
@@ -190,32 +179,13 @@ export default async function RuyaPage({ params }: Props) {
             </div>
           </section>
         )}
+
+        <div className="mt-10">
+          <SymbolCta text="Bu rüyayı gördüysen, rüyanı Remil'de yorumlat." />
+        </div>
       </article>
 
-      {/* Footer */}
-      <footer
-        className="border-t mt-10"
-        style={{ borderColor: "rgba(168,85,247,0.15)" }}
-      >
-        <div className="max-w-4xl mx-auto px-4 py-8 flex flex-col sm:flex-row items-center justify-between gap-4">
-          <Link
-            href="/ruyada"
-            className="text-sm transition-colors hover:text-purple-300"
-            style={{ color: "#9f86c8" }}
-          >
-            ← Tüm Rüyalara Dön
-          </Link>
-          <a
-            href="https://remil.app"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm font-semibold transition-colors hover:text-purple-300"
-            style={{ color: "#A855F7" }}
-          >
-            remil.app
-          </a>
-        </div>
-      </footer>
+      <MiniFooter />
     </main>
   );
 }
