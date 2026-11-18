@@ -24,7 +24,7 @@ export default function RuyadaClient() {
   return (
     <>
       {/* Search */}
-      <div className="max-w-2xl mx-auto px-4 pb-10">
+      <div id="ruya-ara" className="max-w-2xl mx-auto px-4 pb-10 scroll-mt-6">
         <div className="relative">
           <span
             className="absolute left-4 top-1/2 -translate-y-1/2 text-lg pointer-events-none"
