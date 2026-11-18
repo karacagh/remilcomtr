@@ -4,7 +4,7 @@ import MiniFooter from "@/components/MiniFooter";
 export const metadata: Metadata = {
   title: "Hakkımızda – Remil Ücretsiz Yapay Zeka Fal ve Rüya Yorumu Uygulaması",
   description:
-    "Remil, yapay zeka destekli, tamamen ücretsiz bir fal ve rüya yorumu uygulamasıdır. Kahve, el, yüz ve ilişki falı, numeroloji ve rüya yorumu; 6 farklı falcı karakteriyle.",
+    "Remil, yapay zeka destekli, tamamen ücretsiz bir fal ve rüya yorumu uygulamasıdır. Kahve, el, yüz ve ilişki falı, numeroloji, tarot ve rüya yorumu; 6 farklı falcı karakteriyle.",
   alternates: { canonical: "https://www.remil.com.tr/hakkimizda" },
   openGraph: {
     type: "website",
@@ -23,6 +23,7 @@ const falTurleri = [
   { emoji: "🙂", ad: "Yüz Falı" },
   { emoji: "💞", ad: "İlişki Falı" },
   { emoji: "🔢", ad: "Numeroloji" },
+  { emoji: "🃏", ad: "Tarot" },
   { emoji: "🌙", ad: "Rüya Yorumu" },
 ];
 

@@ -319,7 +319,7 @@ export default function HomeClient() {
           <span style={{ fontSize: "1.3rem" }}>🎁</span>
         </div>
 
-        <p className="hs">Birbirinden farklı kişiliklere sahip AI falcılarla kahve falı, el falı, yüz falı ve ilişki falı — sadece sana özel yorumlar.</p>
+        <p className="hs">Birbirinden farklı kişiliklere sahip AI falcılarla kahve falı, el falı, yüz falı, ilişki falı, numeroloji, tarot ve rüya yorumu — sadece sana özel yorumlar.</p>
 
         <div className="hb">
           <a href="#indir" className="bp" id="main-cta">🔮 Ücretsiz Başla</a>
@@ -426,14 +426,13 @@ export default function HomeClient() {
               <p>Bu fal türü; mevcut bir ilişkiyi anlamak, potansiyel bir birlikteliği değerlendirmek ya da iki kişi arasındaki uyumu keşfetmek isteyenler için tasarlanmıştır.</p>
               <ul className="fdl"><li>İki kişinin fotoğrafı ile birlikte analiz</li><li>Uyum, çekim ve potansiyel çatışma yorumu</li><li>Geçmiş, şimdiki durum ve geleceğe dair tahminler</li></ul>
             </article>
-            <article className="ftc cs rv" style={{ transitionDelay: ".2s" }}>
-              <span className="ctag">Yakında</span>
+            <article className="ftc rv" style={{ transitionDelay: ".2s" }}>
               <div className="fch"><span className="fib" role="img" aria-label="Tarot">🃏</span><div><div className="fct">Tarot</div><div className="fcs">78 Kart, Sonsuz Yorum</div></div></div>
               <p>Evrenin mesajlarını 78 kartın dilinden okumak. AI falcıların rehberliğinde klasik tarot geleneği modern yorumla buluşuyor.</p>
               <ul className="fdl"><li>Major ve Minor Arcana kartları</li><li>Celtic Cross ve diğer dizilimler</li><li>Günlük, haftalık ve dönemsel okumalar</li></ul>
+              <a href="https://remil.app" className="bs" target="_blank" rel="noopener noreferrer" style={{ marginTop: "20px" }}>Tarot Baktır →</a>
             </article>
-            <article className="ftc cs rv" style={{ transitionDelay: ".3s" }}>
-              <span className="ctag">Yakında</span>
+            <article className="ftc rv" style={{ transitionDelay: ".3s" }}>
               <div className="fch"><span className="fib" role="img" aria-label="Numeroloji">🔢</span><div><div className="fct">Numeroloji</div><div className="fcs">Sayıların Sırrı</div></div></div>
               <p>Adın ve doğum tarihinin içinde gizli mesajlar var. Numeroloji, bu sayıların frekanslarını çözerek hayat amacını ve temel doğanı ortaya koyar.</p>
               <ul className="fdl"><li>Yaşam yolu, ifade ve ruh sayısı hesabı</li><li>Kişisel yıl ve dönem analizi</li><li>İsim enerji profili</li></ul>

@@ -4,25 +4,25 @@ import HomeClient from "./HomeClient";
 export const metadata: Metadata = {
   title: "Remil — Ücretsiz Yapay Zeka Fal Uygulaması | Kahve, El, Yüz, İlişki Falı",
   description:
-    "Remil, Claude AI destekli Türkiye'nin en gelişmiş fal uygulamasıdır. Kahve falı, el falı, yüz falı ve ilişki falı — birbirinden farklı AI falcı karakterleriyle sana özel yorumlar. Tamamen ücretsiz fal uygulaması — üyelik ve ödeme yok.",
+    "Remil, Claude AI destekli Türkiye'nin en gelişmiş fal uygulamasıdır. Kahve falı, el falı, yüz falı, ilişki falı, numeroloji, tarot ve rüya yorumu — birbirinden farklı AI falcı karakterleriyle sana özel yorumlar. Tamamen ücretsiz fal uygulaması — üyelik ve ödeme yok.",
   keywords:
-    "ücretsiz fal uygulaması, fal uygulaması, kahve falı, el falı, yüz falı, yapay zeka fal, AI fal, ilişki falı, tarot, numeroloji, online fal, fal yorumu, türk fal uygulaması",
+    "ücretsiz fal uygulaması, fal uygulaması, kahve falı, el falı, yüz falı, yapay zeka fal, AI fal, ilişki falı, tarot, numeroloji, rüya yorumu, online fal, fal yorumu, türk fal uygulaması",
   robots: "index, follow",
   authors: [{ name: "Remil" }],
-  alternates: { canonical: "https://remil.com.tr/" },
+  alternates: { canonical: "https://www.remil.com.tr/" },
   openGraph: {
     type: "website",
-    url: "https://remil.com.tr/",
+    url: "https://www.remil.com.tr/",
     title: "Remil — Ücretsiz Yapay Zeka Fal Uygulaması",
     description:
-      "Kahve falı, el falı, yüz falı ve daha fazlası. AI destekli falcı karakterleriyle sana özel yorumlar. Ücretsiz fal uygulaması, üyelik ve ödeme yok!",
+      "Kahve falı, el falı, yüz falı, ilişki falı, numeroloji, tarot ve rüya yorumu. AI destekli falcı karakterleriyle sana özel yorumlar. Ücretsiz fal uygulaması, üyelik ve ödeme yok!",
     locale: "tr_TR",
     siteName: "Remil",
   },
   twitter: {
     card: "summary_large_image",
     title: "Remil — Ücretsiz Yapay Zeka Fal Uygulaması",
-    description: "Ücretsiz fal uygulaması: AI destekli kahve falı, el falı, yüz falı. Üyelik ve ödeme yok.",
+    description: "Ücretsiz fal uygulaması: kahve, el, yüz, ilişki falı, numeroloji, tarot ve rüya yorumu. Üyelik ve ödeme yok.",
   },
 };
 
@@ -34,9 +34,9 @@ const jsonLdApp = {
   applicationCategory: "LifestyleApplication",
   offers: { "@type": "Offer", price: "0", priceCurrency: "TRY" },
   description:
-    "Yapay zeka destekli, tamamen ücretsiz fal uygulaması. Kahve falı, el falı, yüz falı ve ilişki falı — üyelik ve ödeme yok.",
-  url: "https://remil.com.tr",
-  publisher: { "@type": "Organization", name: "Remil", url: "https://remil.com.tr" },
+    "Yapay zeka destekli, tamamen ücretsiz fal uygulaması. Kahve falı, el falı, yüz falı, ilişki falı, numeroloji, tarot ve rüya yorumu — üyelik ve ödeme yok.",
+  url: "https://www.remil.com.tr",
+  publisher: { "@type": "Organization", name: "Remil", url: "https://www.remil.com.tr" },
 };
 
 const jsonLdFaq = {
@@ -48,7 +48,7 @@ const jsonLdFaq = {
       name: "Remil fal uygulaması nedir?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Remil, Anthropic'in geliştirdiği Claude AI modelini kullanan Türkiye'nin en gelişmiş fal uygulamasıdır. Kahve falı, el falı, yüz falı ve ilişki falı türlerini birbirinden farklı AI falcı karakterleriyle sunar.",
+        text: "Remil, Anthropic'in geliştirdiği Claude AI modelini kullanan Türkiye'nin en gelişmiş fal uygulamasıdır. Kahve falı, el falı, yüz falı, ilişki falı, numeroloji, tarot ve rüya yorumunu birbirinden farklı AI falcı karakterleriyle sunar.",
       },
     },
     {
@@ -64,7 +64,7 @@ const jsonLdFaq = {
       name: "Hangi fal türleri mevcut?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Remil'de kahve falı, el falı, yüz falı ve ilişki falı aktif olarak kullanılabilir. Tarot ve numeroloji yakında eklenecektir.",
+        text: "Remil'de kahve falı, el falı, yüz falı, ilişki falı, numeroloji, tarot ve rüya yorumu aktif olarak kullanılabilir.",
       },
     },
   ],

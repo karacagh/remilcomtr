@@ -8,6 +8,14 @@ export const metadata: Metadata = {
     "Kahve falında görülen tüm semboller ve anlamları. At, kedi, yılan, kuş ve daha fazlası için detaylı fal yorumları.",
   keywords:
     "kahve falı sembolleri, falda sembol anlamları, kahve falı yorumu, fal sembolleri listesi",
+  alternates: { canonical: "https://www.remil.com.tr/falda" },
+  openGraph: {
+    type: "website",
+    url: "https://www.remil.com.tr/falda",
+    title: "Kahve Falında Semboller",
+    siteName: "Remil",
+    locale: "tr_TR",
+  },
 };
 
 export default function FaldaSembollerPage() {

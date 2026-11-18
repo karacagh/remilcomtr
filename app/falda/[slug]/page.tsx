@@ -35,12 +35,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: sembol.meta_description,
     keywords: sembol.keywords,
     alternates: {
-      canonical: `https://remil.com.tr/falda/${sembol.slug}`,
+      canonical: `https://www.remil.com.tr/falda/${sembol.slug}`,
     },
     openGraph: {
       title: `${sembol.baslik} – Kahve Falı Anlamı`,
       description: sembol.meta_description,
-      url: `https://remil.com.tr/falda/${sembol.slug}`,
+      url: `https://www.remil.com.tr/falda/${sembol.slug}`,
       siteName: "remil.com.tr",
       locale: "tr_TR",
       type: "article",

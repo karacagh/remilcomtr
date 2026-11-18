@@ -8,6 +8,14 @@ export const metadata: Metadata = {
     "Rüyanda gördüklerinin anlamını keşfet. Remil yapay zeka ile rüyanı yorumlar. Yılan, su, uçmak, diş düşmesi ve 100 rüya sembolünün tabiri.",
   keywords:
     "rüya tabirleri, rüya anlamları, rüyada görmek ne demek, rüya yorumu, rüya sözlüğü",
+  alternates: { canonical: "https://www.remil.com.tr/ruyada" },
+  openGraph: {
+    type: "website",
+    url: "https://www.remil.com.tr/ruyada",
+    title: "Rüya Tabirleri",
+    siteName: "Remil",
+    locale: "tr_TR",
+  },
 };
 
 export default function RuyadaSembollerPage() {

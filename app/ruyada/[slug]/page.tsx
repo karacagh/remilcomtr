@@ -35,12 +35,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     description: ruya.meta_description,
     keywords: ruya.keywords,
     alternates: {
-      canonical: `https://remil.com.tr/ruyada/${ruya.slug}`,
+      canonical: `https://www.remil.com.tr/ruyada/${ruya.slug}`,
     },
     openGraph: {
       title: `${ruya.baslik} – Rüya Tabiri`,
       description: ruya.meta_description,
-      url: `https://remil.com.tr/ruyada/${ruya.slug}`,
+      url: `https://www.remil.com.tr/ruyada/${ruya.slug}`,
       siteName: "remil.com.tr",
       locale: "tr_TR",
       type: "article",
