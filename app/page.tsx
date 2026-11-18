@@ -2,27 +2,27 @@ import type { Metadata } from "next";
 import HomeClient from "./HomeClient";
 
 export const metadata: Metadata = {
-  title: "Remil — Yapay Zeka Fal Uygulaması | Kahve, El, Yüz, İlişki Falı",
+  title: "Remil — Ücretsiz Yapay Zeka Fal Uygulaması | Kahve, El, Yüz, İlişki Falı",
   description:
-    "Remil, Claude AI destekli Türkiye'nin en gelişmiş fal uygulamasıdır. Kahve falı, el falı, yüz falı ve ilişki falı — birbirinden farklı AI falcı karakterleriyle sana özel yorumlar. İlk üyelikte 200 token hediye.",
+    "Remil, Claude AI destekli Türkiye'nin en gelişmiş fal uygulamasıdır. Kahve falı, el falı, yüz falı ve ilişki falı — birbirinden farklı AI falcı karakterleriyle sana özel yorumlar. Tamamen ücretsiz fal uygulaması — üyelik ve ödeme yok.",
   keywords:
-    "fal uygulaması, kahve falı, el falı, yüz falı, yapay zeka fal, AI fal, ilişki falı, tarot, numeroloji, online fal, fal yorumu, türk fal uygulaması",
+    "ücretsiz fal uygulaması, fal uygulaması, kahve falı, el falı, yüz falı, yapay zeka fal, AI fal, ilişki falı, tarot, numeroloji, online fal, fal yorumu, türk fal uygulaması",
   robots: "index, follow",
   authors: [{ name: "Remil" }],
   alternates: { canonical: "https://remil.com.tr/" },
   openGraph: {
     type: "website",
     url: "https://remil.com.tr/",
-    title: "Remil — Yapay Zeka Fal Uygulaması",
+    title: "Remil — Ücretsiz Yapay Zeka Fal Uygulaması",
     description:
-      "Kahve falı, el falı, yüz falı ve daha fazlası. AI destekli falcı karakterleriyle sana özel yorumlar. İlk üyelikte 200 token hediye!",
+      "Kahve falı, el falı, yüz falı ve daha fazlası. AI destekli falcı karakterleriyle sana özel yorumlar. Ücretsiz fal uygulaması, üyelik ve ödeme yok!",
     locale: "tr_TR",
     siteName: "Remil",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Remil — Yapay Zeka Fal Uygulaması",
-    description: "AI destekli kahve falı, el falı, yüz falı. İlk üyelikte 200 token hediye.",
+    title: "Remil — Ücretsiz Yapay Zeka Fal Uygulaması",
+    description: "Ücretsiz fal uygulaması: AI destekli kahve falı, el falı, yüz falı. Üyelik ve ödeme yok.",
   },
 };
 
@@ -34,7 +34,7 @@ const jsonLdApp = {
   applicationCategory: "LifestyleApplication",
   offers: { "@type": "Offer", price: "0", priceCurrency: "TRY" },
   description:
-    "Yapay zeka destekli Türkiye en gelişmiş fal uygulaması. Kahve falı, el falı, yüz falı ve ilişki falı.",
+    "Yapay zeka destekli, tamamen ücretsiz fal uygulaması. Kahve falı, el falı, yüz falı ve ilişki falı — üyelik ve ödeme yok.",
   url: "https://remil.com.tr",
   publisher: { "@type": "Organization", name: "Remil", url: "https://remil.com.tr" },
 };
@@ -53,10 +53,10 @@ const jsonLdFaq = {
     },
     {
       "@type": "Question",
-      name: "İlk üyelikte kaç token hediye veriliyor?",
+      name: "Remil ücretsiz mi?",
       acceptedAnswer: {
         "@type": "Answer",
-        text: "Remil'e üye olduğunuzda 200 token hediye kazanırsınız.",
+        text: "Evet, Remil tamamen ücretsizdir.",
       },
     },
     {

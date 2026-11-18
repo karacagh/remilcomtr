@@ -298,8 +298,7 @@ export default function HomeClient() {
           <li><a href="#fal-turleri">Fal Türleri</a></li>
           <li><a href="/falda">Falda Semboller</a></li>
           <li><a href="/ruyada">Rüyada Semboller</a></li>
-          <li><a href="#fiyatlandirma">Fiyatlar</a></li>
-          <li><a href="#indir" className="nc">Hemen Başla</a></li>
+          <li><a href="#indir" className="nc">İndir</a></li>
         </ul>
       </nav>
 
@@ -314,10 +313,9 @@ export default function HomeClient() {
         <p className="hey">✦ Türkiye&apos;nin Yapay Zeka Destekli Fal Uygulaması ✦</p>
         <h1 className="hh">Kaderine Bak,<br /><em>Geleceğini Gör</em></h1>
 
-        <div className="tb200" role="note" aria-label="İlk üyelikte 200 token hediye">
-          <span style={{ color: "rgba(240,232,208,.6)", fontSize: ".72rem", letterSpacing: ".1em" }}>İLK ÜYELİKTE</span>
-          <span className="tc">200</span>
-          <span style={{ letterSpacing: ".12em" }}>TOKEN HEDİYE</span>
+        <div className="tb200" role="note" aria-label="Remil tamamen ücretsiz">
+          <span className="tc">%100</span>
+          <span style={{ letterSpacing: ".12em" }}>ÜCRETSİZ FAL UYGULAMASI</span>
           <span style={{ fontSize: "1.3rem" }}>🎁</span>
         </div>
 
@@ -335,9 +333,9 @@ export default function HomeClient() {
               <div className="pno"></div>
               <div className="psc">
                 <div style={{ fontFamily: "'Cinzel',serif", fontSize: ".48rem", color: "rgba(156,89,232,.7)", letterSpacing: ".2em", textAlign: "center", padding: "4px 0 8px" }}>FALCILARIM</div>
-                <div className="pc"><div className="pa">👵</div><div className="pi"><div className="pn2">Mediha Hala</div><div className="pd2">Mahalle Büyüğü • 20🪙</div></div><div className="pb2 bon">Online</div></div>
-                <div className="pc"><div className="pa">🌙</div><div className="pi"><div className="pn2">Acem Kızı Leyla</div><div className="pd2">Mistik Yorumcu • 25🪙</div></div><div className="pb2 bon">Online</div></div>
-                <div className="pc"><div className="pa">🧔</div><div className="pi"><div className="pn2">Dede Ahmet</div><div className="pd2">Bilge Kahin • 30🪙</div></div><div className="pb2 bbu">Meşgul</div></div>
+                <div className="pc"><div className="pa">👵</div><div className="pi"><div className="pn2">Mediha Hala</div><div className="pd2">Mahalle Büyüğü</div></div><div className="pb2 bon">Online</div></div>
+                <div className="pc"><div className="pa">🌙</div><div className="pi"><div className="pn2">Acem Kızı Leyla</div><div className="pd2">Mistik Yorumcu</div></div><div className="pb2 bon">Online</div></div>
+                <div className="pc"><div className="pa">🧔</div><div className="pi"><div className="pn2">Dede Ahmet</div><div className="pd2">Bilge Kahin</div></div><div className="pb2 bbu">Meşgul</div></div>
                 <div style={{ marginTop: "12px", background: "rgba(108,59,189,.2)", borderRadius: "8px", padding: "14px", textAlign: "center" }}>
                   <div style={{ fontSize: "1.3rem", marginBottom: "5px" }}>☕</div>
                   <div style={{ fontFamily: "'Cinzel',serif", fontSize: ".48rem", color: "var(--cr)", letterSpacing: ".1em" }}>Kahve Falı Gönder</div>
@@ -349,11 +347,11 @@ export default function HomeClient() {
         </div>
 
         <div className="sbs" id="hero-badges" aria-label="Uygulama indirme bağlantıları">
-          <a href="https://www.remil.app" className="sb" id="ios-badge" target="_blank" rel="noopener" aria-label="App Store'dan İndir">
+          <a href="https://remil.app" className="sb" id="ios-badge" target="_blank" rel="noopener" aria-label="App Store'dan İndir">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11" /></svg>
             <div className="sbt"><span className="sbsub">App Store&apos;dan İndir</span><span className="sbname">Apple Store</span></div>
           </a>
-          <a href="https://www.remil.app" className="sb" id="android-badge" target="_blank" rel="noopener" aria-label="Google Play'den İndir">
+          <a href="https://play.google.com/store/apps/details?id=com.remil.app&amp;hl=tr" className="sb" id="android-badge" target="_blank" rel="noopener" aria-label="Google Play'den İndir">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3.18 23.76c.37.21.79.24 1.18.09l12.47-7.19-2.55-2.55zm16.44-9.7L17 12.46l-2.82 2.82 2.82 2.82 2.64-1.54c.75-.43.75-1.56-.02-2zM3 1.73c-.05.14-.07.32-.07.5v19.54c0 .19.02.37.07.51l.06.05 10.95-10.97v-.25L3.06 1.68zm9.45 9.54l2.55-2.55L2.53 1.58A1.3 1.3 0 0 0 1.18.6z" /></svg>
             <div className="sbt"><span className="sbsub">Google Play&apos;den İndir</span><span className="sbname">Google Play</span></div>
           </a>
@@ -367,39 +365,11 @@ export default function HomeClient() {
         <div className="con">
           <p className="slb rv">Süreç</p>
           <h2 className="st rv" id="nt">Üç Adımda <em>Falına Bak</em></h2>
-          <p className="ss rv">Dakikalar içinde kişiselleştirilmiş fal yorumuna ulaş. Kayıt olmak ve başlamak tamamen ücretsiz.</p>
+          <p className="ss rv">Dakikalar içinde kişiselleştirilmiş fal yorumuna ulaş. Üyelik ve ödeme yok, tamamen ücretsiz.</p>
           <div className="steps">
             <div className="step rv"><div className="snum">①</div><h3>Fotoğrafını Yükle</h3><p>Kahve fincanını, avuç içini ya da yüzünü fotoğrafla ve uygulamaya yükle. AI anında görsel analizi başlatır.</p></div>
             <div className="step rv" style={{ transitionDelay: ".15s" }}><div className="snum">②</div><h3>Falcını Seç</h3><p>Altı özgün falcı karakterinden birini seç. Her biri farklı kişilik, farklı yorum tarzı ve farklı derinlik sunar.</p></div>
             <div className="step rv" style={{ transitionDelay: ".3s" }}><div className="snum">③</div><h3>Yorumunu Al</h3><p>Falcın hazırladığında bildirim gelir. Bulanık ekranı aç, sana özel mistik yorumunu keşfet.</p></div>
-          </div>
-        </div>
-      </section>
-
-      <div className="dv"></div>
-
-      {/* 200 TOKEN */}
-      <section className="tfs" aria-labelledby="tt">
-        <div className="tfi">
-          <p className="slb rv">Hoş Geldin Hediyesi</p>
-          <h2 className="st rv" id="tt">İlk Üyelikte <em>200 Token</em> Hediye</h2>
-          <p className="ss rv" style={{ marginBottom: "40px" }}>Remil&apos;e katıldığında seni büyük bir hoş geldin sürpriziyle karşılıyoruz. Kredi kartı gerekmez, hemen falına başla.</p>
-          <div className="t200 rv" aria-label="200 token hediye">
-            <div className="tbn">200</div>
-            <div className="tbl">TOKEN</div>
-          </div>
-          <div className="tbr rv">
-            <div className="tbi"><div className="tbn2">20 🪙</div><div className="tbl2">Uygulamaya<br />girerken hemen</div></div>
-            <div className="tbi"><div className="tbn2">+180 🪙</div><div className="tbl2">Üye olunca<br />anında hediye</div></div>
-            <div className="tbi"><div className="tbn2">= 200 🪙</div><div className="tbl2">Toplam<br />başlangıç bakiyesi</div></div>
-          </div>
-          <div className="tei2 rv">
-            <div className="te">📺 Günde 5 reklam → +30 token kazan</div>
-            <div className="te">🔮 Ekonomik fallar 20–30 token</div>
-            <div className="te">✨ Premium fallar 35–50 token</div>
-          </div>
-          <div style={{ marginTop: "36px" }} className="rv">
-            <a href="#indir" className="bp" style={{ fontSize: ".9rem", padding: "18px 48px" }}>🎁 200 Token ile Başla</a>
           </div>
         </div>
       </section>
@@ -413,12 +383,12 @@ export default function HomeClient() {
           <h2 className="st rv" id="flrt">Remil&apos;in <em>Falcıları</em></h2>
           <p className="ss rv">Her falcı Claude AI tarafından güçlendirilen özgün bir kişiliktir. Aynı fotoğrafa farklı falcılar farklı yorumlar getirir — hiçbiri birbirine benzemez.</p>
           <div className="fg">
-            <article className="fc rv"><span className="fav" role="img" aria-label="Mediha Hala">👵</span><div className="fn">Mediha Hala</div><div className="ftl">Mahalle Büyüğü</div><p className="fd">&quot;Kızım&quot; diye hitap eder, hem sever hem azarlar. Mahallenin en bilge kadını olarak yılların birikimini sıcak ve samimi yorumlara döker. Gerçeği duymak için doğru adres.</p><div className="ff"><div className="fp">🪙 20 Token</div><span className="fst son">7/24 Online</span></div></article>
-            <article className="fc rv" style={{ transitionDelay: ".1s" }}><span className="fav" role="img" aria-label="Acem Kızı Leyla">🌙</span><div className="fn">Acem Kızı Leyla</div><div className="ftl">Mistik Yorumcu</div><p className="fd">Şiirsel ve gizemli. Soğuk ama çekici anlatımıyla her yorumu neredeyse bir şiir gibi akar. Derinlik arayanlar için biçilmiş kaftan.</p><div className="ff"><div className="fp">🪙 25 Token</div><span className="fst son">7/24 Online</span></div></article>
-            <article className="fc rv" style={{ transitionDelay: ".2s" }}><span className="fav" role="img" aria-label="Dede Ahmet">🧔</span><div className="fn">Dede Ahmet</div><div className="ftl">Bilge Kahin</div><p className="fd">Sert, gerçekçi ve az konuşur. Ama söylediği her kelime yerini bulur. Süslü laflardan sıkıldıysan, Dede Ahmet seni bekliyor.</p><div className="ff"><div className="fp">🪙 30 Token</div><span className="fst sof">Zaman Zaman Online</span></div></article>
-            <article className="fc rv" style={{ transitionDelay: ".1s" }}><span className="fav" role="img" aria-label="Aren Hatun">✨</span><div className="fn">Aren Hatun</div><div className="ftl">Eğlenceli Falcı</div><p className="fd">Güldürürken düşündürür. Yorumlarına neşe ve espri katmak isteyenler için ideal. Komik cümleler arasında saklanan gerçekler sürpriz yapabilir.</p><div className="ff"><div className="fp">🪙 35 Token</div><span className="fst son">7/24 Online</span></div></article>
-            <article className="fc rv" style={{ transitionDelay: ".2s" }}><span className="fav" role="img" aria-label="Sinem Bacı">👩</span><div className="fn">Sinem Bacı</div><div className="ftl">Mahallenin Bilirkişisi</div><p className="fd">İlişkiler ve kadın meselelerinde Remil&apos;in en uzman sesi. Kalbinin derinliklerine inen içten yorumlarıyla özellikle aşk ve ilişki konularında çok güçlü.</p><div className="ff"><div className="fp">🪙 40 Token</div><span className="fst slim">12:00 – 18:00</span></div></article>
-            <article className="fc rv" style={{ transitionDelay: ".3s" }}><span className="fav" role="img" aria-label="Mecnun Giassar">🧳</span><div className="fn">Mecnun Giassar</div><div className="ftl">Dünya Gezgini</div><p className="fd">40 ülke gezmiş, yedi dil bilen entelektüel bir kahin. Yorumlarına dünyanın farklı kültürlerinden perspektifler katar. Ufuk genişletmek isteyenler için.</p><div className="ff"><div className="fp">🪙 50 Token</div><span className="fst slim">15:00 – 21:00</span></div></article>
+            <article className="fc rv"><span className="fav" role="img" aria-label="Mediha Hala">👵</span><div className="fn">Mediha Hala</div><div className="ftl">Mahalle Büyüğü</div><p className="fd">&quot;Kızım&quot; diye hitap eder, hem sever hem azarlar. Mahallenin en bilge kadını olarak yılların birikimini sıcak ve samimi yorumlara döker. Gerçeği duymak için doğru adres.</p><div className="ff"><span className="fst son">7/24 Online</span></div></article>
+            <article className="fc rv" style={{ transitionDelay: ".1s" }}><span className="fav" role="img" aria-label="Acem Kızı Leyla">🌙</span><div className="fn">Acem Kızı Leyla</div><div className="ftl">Mistik Yorumcu</div><p className="fd">Şiirsel ve gizemli. Soğuk ama çekici anlatımıyla her yorumu neredeyse bir şiir gibi akar. Derinlik arayanlar için biçilmiş kaftan.</p><div className="ff"><span className="fst son">7/24 Online</span></div></article>
+            <article className="fc rv" style={{ transitionDelay: ".2s" }}><span className="fav" role="img" aria-label="Dede Ahmet">🧔</span><div className="fn">Dede Ahmet</div><div className="ftl">Bilge Kahin</div><p className="fd">Sert, gerçekçi ve az konuşur. Ama söylediği her kelime yerini bulur. Süslü laflardan sıkıldıysan, Dede Ahmet seni bekliyor.</p><div className="ff"><span className="fst sof">Zaman Zaman Online</span></div></article>
+            <article className="fc rv" style={{ transitionDelay: ".1s" }}><span className="fav" role="img" aria-label="Aren Hatun">✨</span><div className="fn">Aren Hatun</div><div className="ftl">Eğlenceli Falcı</div><p className="fd">Güldürürken düşündürür. Yorumlarına neşe ve espri katmak isteyenler için ideal. Komik cümleler arasında saklanan gerçekler sürpriz yapabilir.</p><div className="ff"><span className="fst son">7/24 Online</span></div></article>
+            <article className="fc rv" style={{ transitionDelay: ".2s" }}><span className="fav" role="img" aria-label="Sinem Bacı">👩</span><div className="fn">Sinem Bacı</div><div className="ftl">Mahallenin Bilirkişisi</div><p className="fd">İlişkiler ve kadın meselelerinde Remil&apos;in en uzman sesi. Kalbinin derinliklerine inen içten yorumlarıyla özellikle aşk ve ilişki konularında çok güçlü.</p><div className="ff"><span className="fst slim">12:00 – 18:00</span></div></article>
+            <article className="fc rv" style={{ transitionDelay: ".3s" }}><span className="fav" role="img" aria-label="Mecnun Giassar">🧳</span><div className="fn">Mecnun Giassar</div><div className="ftl">Dünya Gezgini</div><p className="fd">40 ülke gezmiş, yedi dil bilen entelektüel bir kahin. Yorumlarına dünyanın farklı kültürlerinden perspektifler katar. Ufuk genişletmek isteyenler için.</p><div className="ff"><span className="fst slim">15:00 – 21:00</span></div></article>
           </div>
         </div>
       </section>
@@ -493,33 +463,21 @@ export default function HomeClient() {
 
       <div className="dv"></div>
 
-      {/* FIYATLANDIRMA */}
-      <section id="fiyatlandirma" aria-labelledby="fyt">
-        <div className="con">
-          <p className="slb rv">Fiyatlar</p>
-          <h2 className="st rv" id="fyt">Herkese Uygun <em>Paketler</em></h2>
-          <p className="ss rv">İlk 200 token&apos;ın bittikten sonra da uygun fiyatlı paketlerle yoluna devam et. Ya da premium üye ol, her ay 100 token hediye kazan.</p>
-          <div className="fw">
-            <div className="rv">
-              <p className="ttl">TOKEN PAKETLERİ</p>
-              <div className="tp"><div className="ta">🪙 <strong>100 Token</strong></div><div className="tpr">49 ₺</div></div>
-              <div className="tp"><div className="ta">🪙 <strong>250 Token</strong></div><div className="tpr">99 ₺</div></div>
-              <div className="tp"><div className="ta">🪙 <strong>500 Token</strong></div><div className="tpr">149 ₺</div></div>
-              <div style={{ marginTop: "20px", padding: "20px", background: "rgba(156,89,232,.07)", border: "1px solid rgba(156,89,232,.18)", borderRadius: "4px" }}>
-                <p style={{ fontFamily: "'Cinzel',serif", fontSize: ".62rem", letterSpacing: ".2em", color: "var(--am)", marginBottom: "10px" }}>ÜCRETSİZ TOKEN KAZAN</p>
-                <p style={{ fontSize: ".9rem", color: "rgba(240,232,208,.65)", lineHeight: "1.6" }}><strong style={{ color: "var(--cr)" }}>200 token</strong> üye olunca hediye · Günde 5 reklam izleyerek <strong style={{ color: "var(--cr)" }}>+30 token</strong> kazan</p>
-              </div>
-            </div>
-            <div className="prc rv" style={{ transitionDelay: ".2s" }}>
-              <span className="pbt">✦ EN İYİ DEĞER</span>
-              <h3>Premium Üyelik</h3>
-              <p style={{ fontSize: ".88rem", color: "rgba(240,232,208,.5)" }}>Sınırsız mistik deneyim</p>
-              <div className="ppb">199 ₺</div>
-              <p className="pps">/ yıllık · Aylık sadece ~16,6 ₺</p>
-              <ul className="pfl"><li>Reklamsız kesintisiz deneyim</li><li>Her ay 100 token hediye</li><li>Öncelikli falcı erişimi</li><li>Tüm falcılara tam erişim</li></ul>
-              <a href="#indir" className="bp" style={{ width: "100%", justifyContent: "center", textAlign: "center" }}>Premium Başla</a>
-              <p style={{ marginTop: "14px", textAlign: "center", fontSize: ".82rem", color: "rgba(156,89,232,.75)" }}>İlk <strong style={{ color: "var(--am)" }}>200 token</strong> ücretsiz — kredi kartı gerekmez</p>
-            </div>
+      {/* ÜCRETSİZ */}
+      <section id="ucretsiz" aria-labelledby="ucrt">
+        <div className="con" style={{ textAlign: "center" }}>
+          <p className="slb rv">Ücretsiz</p>
+          <h2 className="st rv" id="ucrt">Remil <em>Tamamen Ücretsiz</em></h2>
+          <p className="ss rv">Tüm falcılar ve fal türleri ücretsiz, üyelik ve ödeme yok.</p>
+          <div className="sbs rv" style={{ opacity: 1, animation: "none" }} id="free-badges">
+            <a href="https://remil.app" className="sb" id="ios-badge-free" target="_blank" rel="noopener" aria-label="App Store'dan İndir">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11" /></svg>
+              <div className="sbt"><span className="sbsub">App Store&apos;dan İndir</span><span className="sbname">App Store</span></div>
+            </a>
+            <a href="https://play.google.com/store/apps/details?id=com.remil.app&amp;hl=tr" className="sb" id="android-badge-free" target="_blank" rel="noopener" aria-label="Google Play'den İndir">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3.18 23.76c.37.21.79.24 1.18.09l12.47-7.19-2.55-2.55zm16.44-9.7L17 12.46l-2.82 2.82 2.82 2.82 2.64-1.54c.75-.43.75-1.56-.02-2zM3 1.73c-.05.14-.07.32-.07.5v19.54c0 .19.02.37.07.51l.06.05 10.95-10.97v-.25L3.06 1.68zm9.45 9.54l2.55-2.55L2.53 1.58A1.3 1.3 0 0 0 1.18.6z" /></svg>
+              <div className="sbt"><span className="sbsub">Google Play&apos;den İndir</span><span className="sbname">Google Play</span></div>
+            </a>
           </div>
         </div>
       </section>
@@ -538,8 +496,8 @@ export default function HomeClient() {
               <div className="fqa" itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer"><div className="fqai" itemProp="text">Evet. Remil, Anthropic&apos;in geliştirdiği Claude AI modelini kullanır. Fotoğraflarınız doğrudan bu modele aktarılır ve gerçek bir görüntü analizi yapılır. Hazır kalıp cevaplar veya rastgele seçilen metinler yoktur — her yorum, o fotoğrafa ve o falcı karakterine özel üretilir.</div></div>
             </div>
             <div className="fqi" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
-              <button className="fqq" aria-expanded="false" itemProp="name">200 token ne kadar fal yapmama yeter? <span className="fi">+</span></button>
-              <div className="fqa" itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer"><div className="fqai" itemProp="text">En ekonomik falcı Mediha Hala ile 200 token&apos;la 10 fala bakılabilir (her biri 20 token). Orta segment falcılar 25–30 token, premium falcılar 35–50 token alır. 200 token, başlangıç için oldukça cömert bir bakiye — birden fazla fal türünü deneyimlemek için yeterlidir.</div></div>
+              <button className="fqq" aria-expanded="false" itemProp="name">Remil ücretsiz mi? <span className="fi">+</span></button>
+              <div className="fqa" itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer"><div className="fqai" itemProp="text">Evet, Remil tamamen ücretsizdir.</div></div>
             </div>
             <div className="fqi" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
               <button className="fqq" aria-expanded="false" itemProp="name">Fotoğraflarım güvende mi? <span className="fi">+</span></button>
@@ -547,7 +505,7 @@ export default function HomeClient() {
             </div>
             <div className="fqi" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
               <button className="fqq" aria-expanded="false" itemProp="name">Falım neden hemen gelmiyor? <span className="fi">+</span></button>
-              <div className="fqa" itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer"><div className="fqai" itemProp="text">Remil, gerçek bir falcı deneyimi yaratmak için kasıtlı bir bekleme süresi kullanır. Ekonomik falcılar ~5 dakika, premium falcılar ~10 dakika çalışır. Falcı meşgulse ek 5 dakika eklenebilir. Hazır olduğunda push bildirimi gelir.</div></div>
+              <div className="fqa" itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer"><div className="fqai" itemProp="text">Remil, gerçek bir falcı deneyimi yaratmak için kasıtlı bir bekleme süresi kullanır. Falcıya göre yorumun hazırlanması ~5–10 dakika sürer. Falcı meşgulse ek 5 dakika eklenebilir. Hazır olduğunda push bildirimi gelir.</div></div>
             </div>
             <div className="fqi" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
               <button className="fqq" aria-expanded="false" itemProp="name">Play Store&apos;daki &quot;Remil Kum Falı&quot; uygulamasıyla ilişkiniz var mı? <span className="fi">+</span></button>
@@ -562,15 +520,15 @@ export default function HomeClient() {
       {/* DOWNLOAD CTA */}
       <section className="dcta" id="indir" aria-labelledby="indt">
         <div className="con" style={{ position: "relative", zIndex: 1 }}>
-          <div className="ftb">✦ İLK ÜYELİKTE 200 TOKEN HEDİYE ✦</div>
+          <div className="ftb">✦ TAMAMEN ÜCRETSİZ ✦</div>
           <h2 id="indt">Kaderine Bakmaya<br /><em>Hazır Mısın?</em></h2>
-          <p>Remil&apos;e katıl, AI destekli falcılarla mistik yolculuğuna başla. Ücretsiz başla — 200 token, kredi kartı gerekmez.</p>
+          <p>Remil&apos;e katıl, AI destekli falcılarla mistik yolculuğuna başla. Tüm falcılar ve fal türleri ücretsiz — üyelik ve ödeme yok.</p>
           <div className="sbs" style={{ opacity: 1, animation: "none" }} id="cta-badges">
-            <a href="https://www.remil.app" className="sb" id="ios-badge-cta" target="_blank" rel="noopener" aria-label="App Store'dan İndir">
+            <a href="https://remil.app" className="sb" id="ios-badge-cta" target="_blank" rel="noopener" aria-label="App Store'dan İndir">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11" /></svg>
               <div className="sbt"><span className="sbsub">App Store&apos;dan İndir</span><span className="sbname">Apple Store</span></div>
             </a>
-            <a href="https://www.remil.app" className="sb" id="android-badge-cta" target="_blank" rel="noopener" aria-label="Google Play'den İndir">
+            <a href="https://play.google.com/store/apps/details?id=com.remil.app&amp;hl=tr" className="sb" id="android-badge-cta" target="_blank" rel="noopener" aria-label="Google Play'den İndir">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3.18 23.76c.37.21.79.24 1.18.09l12.47-7.19-2.55-2.55zm16.44-9.7L17 12.46l-2.82 2.82 2.82 2.82 2.64-1.54c.75-.43.75-1.56-.02-2zM3 1.73c-.05.14-.07.32-.07.5v19.54c0 .19.02.37.07.51l.06.05 10.95-10.97v-.25L3.06 1.68zm9.45 9.54l2.55-2.55L2.53 1.58A1.3 1.3 0 0 0 1.18.6z" /></svg>
               <div className="sbt"><span className="sbsub">Google Play&apos;den İndir</span><span className="sbname">Google Play</span></div>
             </a>
@@ -590,7 +548,7 @@ export default function HomeClient() {
             <li><a href="#nasil-calisir">Nasıl Çalışır</a></li>
             <li><a href="#falcilar">Falcılar</a></li>
             <li><a href="#fal-turleri">Fal Türleri</a></li>
-            <li><a href="#fiyatlandirma">Fiyatlar</a></li>
+            <li><a href="#indir">İndir</a></li>
             <li><a href="#sss">SSS</a></li>
             <li><a href="mailto:destek@remil.com.tr">Destek</a></li>
             <li><a href="/gizlilik">Gizlilik</a></li>
