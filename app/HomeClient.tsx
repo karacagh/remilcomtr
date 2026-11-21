@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 const css = `
 :root{--void:#060610;--deep:#0d0b1e;--pm:#2d1b69;--pg:#6c3bbd;--am:#9b59e8;--vl:#c084fc;--gold:#d4af37;--gl:#f0d060;--cr:#f0e8d0}
@@ -61,6 +61,12 @@ h1.hh em{font-style:normal;color:var(--gold);text-shadow:0 0 40px rgba(212,175,5
 .sbname{font-family:'Cinzel',serif;font-size:.85rem;font-weight:700}
 .sbhi{border-color:rgba(240,232,208,.55)!important;background:rgba(255,255,255,.09)!important}
 .sbdim{opacity:.4}
+.a2hs{width:100%;max-width:400px;margin:0 auto;padding:24px 22px;border:1px solid rgba(212,175,55,.45);border-radius:12px;background:linear-gradient(135deg,rgba(212,175,55,.08),rgba(108,59,189,.16));backdrop-filter:blur(6px);text-align:left;color:var(--cr)}
+.a2hs h3{font-family:'Cinzel',serif;font-size:1rem;font-weight:700;color:var(--gold);letter-spacing:.06em;text-align:center;margin-bottom:16px}
+.a2hs ol{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:20px}
+.a2hs li{display:flex;gap:12px;align-items:flex-start;font-size:1rem;line-height:1.45;color:rgba(240,232,208,.85)}
+.a2hs .a2n{flex:0 0 26px;height:26px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-family:'Cinzel',serif;font-size:.75rem;font-weight:700;color:#fff;background:linear-gradient(135deg,var(--pm),var(--pg));border:1px solid rgba(156,89,232,.5)}
+.a2hs .bp{width:100%;justify-content:center;padding:15px 20px;font-size:.75rem}
 section{position:relative;z-index:1;padding:100px 24px}
 .con{max-width:1100px;margin:0 auto}
 .slb{font-family:'Cinzel',serif;font-size:.65rem;letter-spacing:.45em;text-transform:uppercase;color:var(--am);text-align:center;margin-bottom:14px}
@@ -174,7 +180,23 @@ footer{position:relative;z-index:1;border-top:1px solid rgba(156,89,232,.12);pad
 @media(min-width:769px) and (max-width:1024px){.fg{grid-template-columns:repeat(2,1fr)}.ftg{grid-template-columns:1fr}.aif{grid-template-columns:repeat(2,1fr)}}
 `;
 
+function IOSInstallCard() {
+  return (
+    <div className="a2hs" role="region" aria-label="Remil'i iPhone ana ekranına ekle">
+      <h3>Remil&apos;i telefonuna ekle</h3>
+      <ol>
+        <li><span className="a2n">1</span><span>Safari&apos;de remil.app&apos;i aç</span></li>
+        <li><span className="a2n">2</span><span>Alttaki Paylaş (□↑) simgesine dokun</span></li>
+        <li><span className="a2n">3</span><span>&apos;Ana Ekrana Ekle&apos;yi seç</span></li>
+      </ol>
+      <a href="https://remil.app" className="bp" target="_blank" rel="noopener">remil.app&apos;i Aç</a>
+    </div>
+  );
+}
+
 export default function HomeClient() {
+  const [isIOS, setIsIOS] = useState(false);
+
   useEffect(() => {
     // STARFIELD
     const canvas = document.getElementById("starfield") as HTMLCanvasElement;
@@ -251,19 +273,25 @@ export default function HomeClient() {
       });
     });
 
-    // DEVICE DETECTION
-    const ua = navigator.userAgent || navigator.vendor || "";
-    const isIOS = /iPad|iPhone|iPod/.test(ua) && !(window as Window & { MSStream?: unknown }).MSStream;
-    const isAndroid = /android/i.test(ua);
-    const storeUrl = "https://www.remil.app";
-    if (isIOS || isAndroid) {
+    // DEVICE DETECTION (sadece client; SSR çıktısı değişmez)
+    const ua = navigator.userAgent || "";
+    const ios =
+      /iPhone|iPad|iPod/.test(ua) ||
+      (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    const isAndroid = !ios && /android/i.test(ua);
+    if (ios) {
+      // SSR ile aynı ilk render için tespit bilerek mount sonrası yapılıyor
+      // eslint-disable-next-line react-hooks/set-state-in-effect
+      setIsIOS(true);
       const mainCta = document.getElementById("main-cta");
-      if (mainCta) mainCta.setAttribute("href", storeUrl);
-      const h = isIOS ? "ios" : "android";
-      ["ios-badge", "android-badge", "ios-badge-cta", "android-badge-cta"].forEach((id) => {
+      if (mainCta) mainCta.setAttribute("href", "#indir");
+    } else if (isAndroid) {
+      const mainCta = document.getElementById("main-cta");
+      if (mainCta) mainCta.setAttribute("href", "https://www.remil.app");
+      ["ios-badge", "android-badge", "ios-badge-free", "android-badge-free", "ios-badge-cta", "android-badge-cta"].forEach((id) => {
         const el = document.getElementById(id);
         if (!el) return;
-        el.classList.add(id.startsWith(h) ? "sbhi" : "sbdim");
+        el.classList.add(id.startsWith("android") ? "sbhi" : "sbdim");
       });
     }
 
@@ -347,14 +375,20 @@ export default function HomeClient() {
         </div>
 
         <div className="sbs" id="hero-badges" aria-label="Uygulama indirme bağlantıları">
-          <a href="https://remil.app" className="sb" id="ios-badge" target="_blank" rel="noopener" aria-label="App Store'dan İndir">
+          {isIOS ? (
+            <IOSInstallCard />
+          ) : (
+            <a href="https://remil.app" className="sb" id="ios-badge" target="_blank" rel="noopener" aria-label="iPhone'da Safari ile Ana Ekrana ekleyerek kullanabilirsiniz">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11" /></svg>
-            <div className="sbt"><span className="sbsub">App Store&apos;dan İndir</span><span className="sbname">Apple Store</span></div>
+            <div className="sbt"><span className="sbsub">iPhone&apos;da Safari ile</span><span className="sbname">Ana Ekrana Ekle</span></div>
           </a>
+          )}
+          {!isIOS && (
           <a href="https://play.google.com/store/apps/details?id=com.remil.app&amp;hl=tr" className="sb" id="android-badge" target="_blank" rel="noopener" aria-label="Google Play'den İndir">
             <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3.18 23.76c.37.21.79.24 1.18.09l12.47-7.19-2.55-2.55zm16.44-9.7L17 12.46l-2.82 2.82 2.82 2.82 2.64-1.54c.75-.43.75-1.56-.02-2zM3 1.73c-.05.14-.07.32-.07.5v19.54c0 .19.02.37.07.51l.06.05 10.95-10.97v-.25L3.06 1.68zm9.45 9.54l2.55-2.55L2.53 1.58A1.3 1.3 0 0 0 1.18.6z" /></svg>
             <div className="sbt"><span className="sbsub">Google Play&apos;den İndir</span><span className="sbname">Google Play</span></div>
           </a>
+          )}
         </div>
       </header>
 
@@ -469,14 +503,20 @@ export default function HomeClient() {
           <h2 className="st rv" id="ucrt">Remil <em>Tamamen Ücretsiz</em></h2>
           <p className="ss rv">Tüm falcılar ve fal türleri ücretsiz, üyelik ve ödeme yok.</p>
           <div className="sbs rv" style={{ opacity: 1, animation: "none" }} id="free-badges">
-            <a href="https://remil.app" className="sb" id="ios-badge-free" target="_blank" rel="noopener" aria-label="App Store'dan İndir">
+            {isIOS ? (
+              <IOSInstallCard />
+            ) : (
+              <a href="https://remil.app" className="sb" id="ios-badge-free" target="_blank" rel="noopener" aria-label="iPhone'da Safari ile Ana Ekrana ekleyerek kullanabilirsiniz">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11" /></svg>
-              <div className="sbt"><span className="sbsub">App Store&apos;dan İndir</span><span className="sbname">App Store</span></div>
+              <div className="sbt"><span className="sbsub">iPhone&apos;da Safari ile</span><span className="sbname">Ana Ekrana Ekle</span></div>
             </a>
+            )}
+            {!isIOS && (
             <a href="https://play.google.com/store/apps/details?id=com.remil.app&amp;hl=tr" className="sb" id="android-badge-free" target="_blank" rel="noopener" aria-label="Google Play'den İndir">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3.18 23.76c.37.21.79.24 1.18.09l12.47-7.19-2.55-2.55zm16.44-9.7L17 12.46l-2.82 2.82 2.82 2.82 2.64-1.54c.75-.43.75-1.56-.02-2zM3 1.73c-.05.14-.07.32-.07.5v19.54c0 .19.02.37.07.51l.06.05 10.95-10.97v-.25L3.06 1.68zm9.45 9.54l2.55-2.55L2.53 1.58A1.3 1.3 0 0 0 1.18.6z" /></svg>
               <div className="sbt"><span className="sbsub">Google Play&apos;den İndir</span><span className="sbname">Google Play</span></div>
             </a>
+            )}
           </div>
         </div>
       </section>
@@ -497,6 +537,10 @@ export default function HomeClient() {
             <div className="fqi" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
               <button className="fqq" aria-expanded="false" itemProp="name">Remil ücretsiz mi? <span className="fi">+</span></button>
               <div className="fqa" itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer"><div className="fqai" itemProp="text">Evet, Remil tamamen ücretsizdir.</div></div>
+            </div>
+            <div className="fqi" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
+              <button className="fqq" aria-expanded="false" itemProp="name">iPhone&apos;da Remil&apos;i nasıl kullanırım? <span className="fi">+</span></button>
+              <div className="fqa" itemScope itemProp="acceptedAnswer" itemType="https://schema.org/Answer"><div className="fqai" itemProp="text">iPhone&apos;da Safari ile Ana Ekrana ekleyerek kullanabilirsiniz: Safari&apos;de remil.app&apos;i açın, alttaki Paylaş (□↑) simgesine dokunun ve &apos;Ana Ekrana Ekle&apos;yi seçin. Android cihazlarda Remil&apos;i Google Play&apos;den indirebilirsiniz.</div></div>
             </div>
             <div className="fqi" itemScope itemProp="mainEntity" itemType="https://schema.org/Question">
               <button className="fqq" aria-expanded="false" itemProp="name">Fotoğraflarım güvende mi? <span className="fi">+</span></button>
@@ -523,14 +567,20 @@ export default function HomeClient() {
           <h2 id="indt">Kaderine Bakmaya<br /><em>Hazır Mısın?</em></h2>
           <p>Remil&apos;e katıl, AI destekli falcılarla mistik yolculuğuna başla. Tüm falcılar ve fal türleri ücretsiz — üyelik ve ödeme yok.</p>
           <div className="sbs" style={{ opacity: 1, animation: "none" }} id="cta-badges">
-            <a href="https://remil.app" className="sb" id="ios-badge-cta" target="_blank" rel="noopener" aria-label="App Store'dan İndir">
+            {isIOS ? (
+              <IOSInstallCard />
+            ) : (
+              <a href="https://remil.app" className="sb" id="ios-badge-cta" target="_blank" rel="noopener" aria-label="iPhone'da Safari ile Ana Ekrana ekleyerek kullanabilirsiniz">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M18.71 19.5c-.83 1.24-1.71 2.45-3.05 2.47-1.34.03-1.77-.79-3.29-.79-1.53 0-2 .77-3.27.82-1.31.05-2.3-1.32-3.14-2.53C4.25 17 2.94 12.45 4.7 9.39c.87-1.52 2.43-2.48 4.12-2.51 1.28-.02 2.5.87 3.29.87.78 0 2.26-1.07 3.8-.91.65.03 2.47.26 3.64 1.98-.09.06-2.17 1.28-2.15 3.81.03 3.02 2.65 4.03 2.68 4.04-.03.07-.42 1.44-1.38 2.83M13 3.5c.73-.83 1.94-1.46 2.94-1.5.13 1.17-.34 2.35-1.04 3.19-.69.85-1.83 1.51-2.95 1.42-.15-1.15.41-2.35 1.05-3.11" /></svg>
-              <div className="sbt"><span className="sbsub">App Store&apos;dan İndir</span><span className="sbname">Apple Store</span></div>
+              <div className="sbt"><span className="sbsub">iPhone&apos;da Safari ile</span><span className="sbname">Ana Ekrana Ekle</span></div>
             </a>
+            )}
+            {!isIOS && (
             <a href="https://play.google.com/store/apps/details?id=com.remil.app&amp;hl=tr" className="sb" id="android-badge-cta" target="_blank" rel="noopener" aria-label="Google Play'den İndir">
               <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3.18 23.76c.37.21.79.24 1.18.09l12.47-7.19-2.55-2.55zm16.44-9.7L17 12.46l-2.82 2.82 2.82 2.82 2.64-1.54c.75-.43.75-1.56-.02-2zM3 1.73c-.05.14-.07.32-.07.5v19.54c0 .19.02.37.07.51l.06.05 10.95-10.97v-.25L3.06 1.68zm9.45 9.54l2.55-2.55L2.53 1.58A1.3 1.3 0 0 0 1.18.6z" /></svg>
               <div className="sbt"><span className="sbsub">Google Play&apos;den İndir</span><span className="sbname">Google Play</span></div>
             </a>
+            )}
           </div>
           <div className="slks">
             <a href="https://instagram.com/remil.app" target="_blank" rel="noopener">Instagram @remil.app</a>

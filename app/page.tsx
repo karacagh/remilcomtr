@@ -61,6 +61,14 @@ const jsonLdFaq = {
     },
     {
       "@type": "Question",
+      name: "iPhone'da Remil'i nasıl kullanırım?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "iPhone'da Safari ile Ana Ekrana ekleyerek kullanabilirsiniz: Safari'de remil.app'i açın, alttaki Paylaş simgesine dokunun ve 'Ana Ekrana Ekle'yi seçin. Android cihazlarda Remil'i Google Play'den indirebilirsiniz.",
+      },
+    },
+    {
+      "@type": "Question",
       name: "Hangi fal türleri mevcut?",
       acceptedAnswer: {
         "@type": "Answer",
